@@ -45,11 +45,15 @@ public struct BrutalistGaugeStyle: GaugeStyle {
             .fill(theme.color.secondaryBackground)
             .stroke(theme.color.border, lineWidth: theme.dimen.borderWidth)
             .background(theme.color.tertiaryBackground)
+            .bruteClipped()
             .bruteStroked()
     }
 }
 
 #Preview {
+
+    @Previewable @Environment(\.bruteTheme) var theme
+
     VStack {
         Gauge(value: 0.5) {
             Text("Violet")
@@ -100,4 +104,6 @@ public struct BrutalistGaugeStyle: GaugeStyle {
         .environment(\.bruteTheme, .green)
     }
     .padding()
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .background(theme.color.background)
 }
