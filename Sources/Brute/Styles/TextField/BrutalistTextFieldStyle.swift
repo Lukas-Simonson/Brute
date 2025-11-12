@@ -26,12 +26,11 @@ public struct BrutalistTextFieldStyle: TextFieldStyle {
             .bruteClipped()
             .bruteStroked()
             .background {
-                if isFocused {
-                    RoundedRectangle(cornerRadius: theme.dimen.cornerRadius)
-                        .fill(theme.color.border)
-                        .offset(theme.dimen.shadowOffset)
-                }
+                RoundedRectangle(cornerRadius: theme.dimen.cornerRadius)
+                    .fill(theme.color.border)
+                    .offset(isFocused ? theme.dimen.shadowOffset : .zero)
             }
+            .animation(.default, value: isFocused)
             .onTapGesture {
                 isFocused = true
             }

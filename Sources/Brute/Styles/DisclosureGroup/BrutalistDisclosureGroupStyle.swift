@@ -21,6 +21,7 @@ public struct BrutalistDisclosureGroupStyle: DisclosureGroupStyle {
             if configuration.isExpanded {
                 divider
                 content(with: configuration)
+                    .foregroundStyle(theme.color.foreground)
             }
         }
         .brutalized()
@@ -34,6 +35,7 @@ public struct BrutalistDisclosureGroupStyle: DisclosureGroupStyle {
                 .contentTransition(.symbolEffect(.replace))
         }
         .font(theme.font.header)
+        .foregroundStyle(theme.color.secondaryForeground)
         .padding(theme.dimen.contentPadding)
         .background(theme.color.secondaryBackground)
         .onTapGesture {
@@ -61,6 +63,9 @@ public struct BrutalistDisclosureGroupStyle: DisclosureGroupStyle {
 }
 
 #Preview {
+
+    @Previewable @Environment(\.bruteColor) var color
+
     ScrollView {
         VStack(spacing: 30) {
             BrutalistDisclosureGroupStylePreview(title: "Violet")
@@ -77,6 +82,7 @@ public struct BrutalistDisclosureGroupStyle: DisclosureGroupStyle {
         }
         .padding()
     }
+    .background(color.background)
 }
 
 fileprivate struct BrutalistDisclosureGroupStylePreview: View {
@@ -91,6 +97,7 @@ fileprivate struct BrutalistDisclosureGroupStylePreview: View {
         VStack(alignment: .leading) {
             Text(title)
                 .font(.title)
+                .foregroundStyle(color.foreground)
 
             DisclosureGroup(
                 isExpanded: $customExpanded,

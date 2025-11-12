@@ -9,8 +9,8 @@ import SwiftUI
 
 extension BruteTheme {
     public struct Typography: Sendable {
-        let header: Font
-        let caption: Font
+        public let header: Font
+        public let caption: Font
     }
 }
 

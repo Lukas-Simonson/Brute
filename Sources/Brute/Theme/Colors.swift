@@ -9,15 +9,15 @@ import SwiftUI
 
 extension BruteTheme {
     public struct Colors: Sendable {
-        let background: Color
-        let secondaryBackground: Color
-        let tertiaryBackground: Color
+        public let background: Color
+        public let secondaryBackground: Color
+        public let tertiaryBackground: Color
 
-        let foreground: Color
-        let secondaryForeground: Color
-        let tertiaryForeground: Color
+        public let foreground: Color
+        public let secondaryForeground: Color
+        public let tertiaryForeground: Color
 
-        let border: Color
+        public let border: Color
     }
 }
 

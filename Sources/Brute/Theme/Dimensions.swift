@@ -9,12 +9,12 @@ import SwiftUI
 
 extension BruteTheme {
     public struct Dimensions: Sendable {
-        let cornerRadius: CGFloat
-        let shadowOffset: CGSize
-        let borderWidth: CGFloat
+        public let cornerRadius: CGFloat
+        public let shadowOffset: CGSize
+        public let borderWidth: CGFloat
 
-        let smallContentPadding: CGFloat
-        let contentPadding: CGFloat
+        public let smallContentPadding: CGFloat
+        public let contentPadding: CGFloat
     }
 }
 

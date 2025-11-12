@@ -6,7 +6,8 @@ import PackageDescription
 let package = Package(
     name: "Brute",
     platforms: [
-        .iOS(.v17)
+        .iOS(.v17),
+        .macOS(.v15)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
@@ -14,6 +15,10 @@ let package = Package(
             name: "Brute",
             targets: ["Brute"]
         ),
+        .library(
+            name: "BruteSamples",
+            targets: ["BruteSamples"]
+        )
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -21,6 +26,9 @@ let package = Package(
         .target(
             name: "Brute"
         ),
-
+        .target(
+            name: "BruteSamples",
+            dependencies: ["Brute"]
+        )
     ]
 )

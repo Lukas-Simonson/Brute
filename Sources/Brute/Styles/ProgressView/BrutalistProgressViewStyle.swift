@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension ProgressViewStyle where Self == BrutalistProgressViewStyle {
-    static var brute: Self { BrutalistProgressViewStyle() }
+    public static var brute: Self { BrutalistProgressViewStyle() }
 }
 
 public struct BrutalistProgressViewStyle: ProgressViewStyle {

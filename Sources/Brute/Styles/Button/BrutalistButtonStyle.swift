@@ -23,6 +23,8 @@ public struct BrutalistButtonStyle: ButtonStyle {
             .bruteStroked()
             .offset(configuration.isPressed ? theme.dimen.shadowOffset : .zero)
             .bruteShadow()
+            // TODO: Implement Animation for MacOS
+            // .animation(.easeIn(duration: 0.05), value: configuration.isPressed)
     }
 }
 

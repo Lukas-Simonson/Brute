@@ -21,8 +21,13 @@ public struct BrutalistReverseButtonStyle: ButtonStyle {
             .background(theme.color.secondaryBackground)
             .bruteClipped()
             .bruteStroked()
-            .offset(configuration.isPressed ? .zero : theme.dimen.shadowOffset)
-            .bruteShadow()
+            .background {
+                RoundedRectangle(cornerRadius: theme.dimen.cornerRadius)
+                    .fill(theme.color.border)
+                    .offset(configuration.isPressed ? theme.dimen.shadowOffset : .zero)
+            }
+            // TODO: Implement Animation for MacOS
+            // .animation(.easeIn(duration: 0.05), value: configuration.isPressed)
     }
 }
 
