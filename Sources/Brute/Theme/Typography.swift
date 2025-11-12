@@ -9,12 +9,12 @@ import SwiftUI
 
 extension BruteTheme {
     public struct Typography: Sendable {
-        
+        let header: Font
     }
 }
 
 extension BruteTheme.Typography {
     public static let `default` = BruteTheme.Typography(
-
+        header: Font.system(.headline, design: .rounded, weight: .bold)
     )
 }
