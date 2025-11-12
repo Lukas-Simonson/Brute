@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension DisclosureGroupStyle where Self == BrutalistDisclosureGroupStyle {
-    static var brutalist: Self { BrutalistDisclosureGroupStyle() }
+    public static var brutalist: Self { BrutalistDisclosureGroupStyle() }
 }
 
 public struct BrutalistDisclosureGroupStyle: DisclosureGroupStyle {

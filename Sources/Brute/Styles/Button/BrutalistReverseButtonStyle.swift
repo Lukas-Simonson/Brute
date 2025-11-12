@@ -1,5 +1,5 @@
 //
-//  BrutalistButtonStyle.swift
+//  BrutalistReverseButtonStyle.swift
 //  Brute
 //
 //  Created by Lukas Simonson on 11/11/25.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-extension ButtonStyle where Self == BrutalistButtonStyle {
-    public static var brutalist: Self { BrutalistButtonStyle() }
+extension ButtonStyle where Self == BrutalistReverseButtonStyle {
+    public static var brutalistReverse: Self { BrutalistReverseButtonStyle() }
 }
 
-public struct BrutalistButtonStyle: ButtonStyle {
+public struct BrutalistReverseButtonStyle: ButtonStyle {
 
     @Environment(\.bruteTheme) private var theme
 
@@ -21,7 +21,7 @@ public struct BrutalistButtonStyle: ButtonStyle {
             .background(theme.color.secondaryBackground)
             .bruteClipped()
             .bruteStroked()
-            .offset(configuration.isPressed ? theme.dimen.shadowOffset : .zero)
+            .offset(configuration.isPressed ? .zero : theme.dimen.shadowOffset)
             .bruteShadow()
     }
 }
@@ -29,19 +29,19 @@ public struct BrutalistButtonStyle: ButtonStyle {
 #Preview {
     VStack(spacing: 30) {
         Button("Violet Button") { /* does nothing */ }
-            .buttonStyle(.brutalist)
+            .buttonStyle(.brutalistReverse)
             .environment(\.bruteTheme, .violet)
 
         Button("Blue Button") { /* does nothing */ }
-            .buttonStyle(.brutalist)
+            .buttonStyle(.brutalistReverse)
             .environment(\.bruteTheme, .blue)
 
         Button("Orange Button") { /* does nothing */ }
-            .buttonStyle(.brutalist)
+            .buttonStyle(.brutalistReverse)
             .environment(\.bruteTheme, .orange)
 
         Button("Green Button") { /* does nothing */ }
-            .buttonStyle(.brutalist)
+            .buttonStyle(.brutalistReverse)
             .environment(\.bruteTheme, .green)
     }
     .padding()
