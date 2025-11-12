@@ -40,6 +40,7 @@ public struct BrutalistTextFieldStyle: TextFieldStyle {
 
 #Preview {
 
+    @Previewable @Environment(\.bruteTheme) var theme
     @Previewable @State var text = ""
 
     VStack {
@@ -60,5 +61,7 @@ public struct BrutalistTextFieldStyle: TextFieldStyle {
             .environment(\.bruteTheme, .green)
     }
     .padding()
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .background(theme.color.background)
 }
 
