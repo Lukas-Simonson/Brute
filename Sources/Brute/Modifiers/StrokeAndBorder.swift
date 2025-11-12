@@ -54,7 +54,7 @@ fileprivate struct BruteShadow: ViewModifier {
         content.background {
             RoundedRectangle(cornerRadius: theme.dimen.cornerRadius)
                 .fill(theme.color.border)
-                .offset(x: theme.dimen.shadowOffset.horizontal, y: theme.dimen.shadowOffset.vertical)
+                .offset(theme.dimen.shadowOffset)
         }
     }
 }
