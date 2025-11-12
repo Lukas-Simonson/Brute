@@ -1,0 +1,20 @@
+//
+//  Typography.swift
+//  Brute
+//
+//  Created by Lukas Simonson on 11/11/25.
+//
+
+import SwiftUI
+
+extension BruteTheme {
+    public struct Typography: Sendable {
+        
+    }
+}
+
+extension BruteTheme.Typography {
+    public static let `default` = BruteTheme.Typography(
+
+    )
+}
