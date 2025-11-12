@@ -40,20 +40,3 @@ extension BruteTheme {
         dimen: .medCurveTopLeft
     )
 }
-
-extension EnvironmentValues {
-    @Entry
-    public var bruteTheme = BruteTheme.default
-
-    public var bruteColor: BruteTheme.Colors {
-        bruteTheme.color
-    }
-
-    public var bruteFont: BruteTheme.Typography {
-        bruteTheme.font
-    }
-
-    public var bruteDimen: BruteTheme.Dimensions {
-        bruteTheme.dimen
-    }
-}

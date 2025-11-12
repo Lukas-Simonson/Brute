@@ -31,19 +31,19 @@ public struct BrutalistBasicButtonStyle: ButtonStyle {
     VStack(spacing: 30) {
         Button("Violet Button") { /* does nothing */ }
             .buttonStyle(.bruteBasic)
-            .environment(\.bruteTheme, .violet)
+            .bruteTheme(.violet)
 
         Button("Blue Button") { /* does nothing */ }
             .buttonStyle(.bruteBasic)
-            .environment(\.bruteTheme, .blue)
+            .bruteTheme(.blue)
 
         Button("Orange Button") { /* does nothing */ }
             .buttonStyle(.bruteBasic)
-            .environment(\.bruteTheme, .orange)
+            .bruteTheme(.orange)
 
         Button("Green Button") { /* does nothing */ }
             .buttonStyle(.bruteBasic)
-            .environment(\.bruteTheme, .green)
+            .bruteTheme(.green)
     }
     .padding()
 }

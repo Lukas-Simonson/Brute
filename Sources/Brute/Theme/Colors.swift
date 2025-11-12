@@ -21,6 +21,7 @@ extension BruteTheme {
     }
 }
 
+// MARK: - Default Colors
 extension BruteTheme.Colors {
     public static var `default`: BruteTheme.Colors { violet }
 
@@ -71,4 +72,27 @@ extension BruteTheme.Colors {
 
         border: Color(r: 0, g: 0, b: 0)
     )
+}
+
+// MARK: - Copy
+extension BruteTheme.Colors {
+    func copy(
+        background: Color? = nil,
+        secondaryBackground: Color? = nil,
+        tertiaryBackground: Color? = nil,
+        foreground: Color? = nil,
+        secondaryForeground: Color? = nil,
+        tertiaryForeground: Color? = nil,
+        border: Color? = nil
+    ) -> BruteTheme.Colors {
+        BruteTheme.Colors(
+            background: background ?? self.background,
+            secondaryBackground: secondaryBackground ?? self.secondaryBackground,
+            tertiaryBackground: tertiaryBackground ?? self.tertiaryBackground,
+            foreground: foreground ?? self.foreground,
+            secondaryForeground: secondaryForeground ?? self.secondaryForeground,
+            tertiaryForeground: tertiaryForeground ?? self.tertiaryForeground,
+            border: border ?? self.border
+        )
+    }
 }

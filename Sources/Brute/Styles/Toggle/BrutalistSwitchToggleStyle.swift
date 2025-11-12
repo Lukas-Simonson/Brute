@@ -51,25 +51,25 @@ public struct BrutalistSwitchToggleStyle: ToggleStyle {
             Text("Violet Switch Toggle")
         }
         .toggleStyle(.bruteSwitch)
-        .environment(\.bruteTheme, .violet)
+        .bruteTheme(.violet)
 
         Toggle(isOn: $isOn) {
             Text("Blue Switch Toggle")
         }
         .toggleStyle(.bruteSwitch)
-        .environment(\.bruteTheme, .blue)
+        .bruteTheme(.blue)
 
         Toggle(isOn: $isOn) {
             Text("Orange Switch Toggle")
         }
         .toggleStyle(.bruteSwitch)
-        .environment(\.bruteTheme, .orange)
+        .bruteTheme(.orange)
 
         Toggle(isOn: $isOn) {
             Text("Green Switch Toggle")
         }
         .toggleStyle(.bruteSwitch)
-        .environment(\.bruteTheme, .green)
+        .bruteTheme(.green)
     }
     .padding()
     .background(theme.color.background)

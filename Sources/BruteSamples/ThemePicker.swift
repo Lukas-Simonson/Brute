@@ -42,7 +42,7 @@ struct ThemePicker<Content: View>: View {
                                     }
                                 )
                                 .buttonStyle(.brute)
-                                .environment(\.bruteTheme, theme)
+                                .bruteTheme(theme)
                             }
                         }
                     },
@@ -51,25 +51,6 @@ struct ThemePicker<Content: View>: View {
                             .labelStyle(.titleAndIcon)
                     }
                 )
-//                DisclosureGroup("Theme", isExpanded: $isExpanded) {
-//                    HStack(spacing: 20) {
-//                        ForEach(themes, id: \.0) { (name, theme) in
-//                            Button(
-//                                action: {
-//                                    withAnimation {
-//                                        self.theme = theme
-//                                    }
-//                                },
-//                                label: {
-//                                    Text(name)
-//                                        .frame(maxWidth: .infinity)
-//                                }
-//                            )
-//                            .buttonStyle(.brute)
-//                            .environment(\.bruteTheme, theme)
-//                        }
-//                    }
-//                }
 
                 content()
             }
@@ -85,6 +66,6 @@ struct ThemePicker<Content: View>: View {
         .toggleStyle(.bruteSwitch)
 
         .background(theme.color.background)
-        .environment(\.bruteTheme, theme)
+        .bruteTheme(theme)
     }
 }

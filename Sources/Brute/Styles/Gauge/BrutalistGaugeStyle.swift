@@ -59,7 +59,7 @@ public struct BrutalistGaugeStyle: GaugeStyle {
             Text("Violet")
         }
         .gaugeStyle(.brute)
-        .environment(\.bruteTheme, .violet)
+        .bruteTheme(.violet)
 
         Gauge(
             value: 0.09,
@@ -77,13 +77,13 @@ public struct BrutalistGaugeStyle: GaugeStyle {
             }
         )
         .gaugeStyle(.brute)
-        .environment(\.bruteTheme, .blue)
+        .bruteTheme(.blue)
 
         Gauge(value: 0.5) {
             Text("Orange")
         }
         .gaugeStyle(.brute)
-        .environment(\.bruteTheme, .orange)
+        .bruteTheme(.orange)
 
         Gauge(
             value: 0.75,
@@ -101,7 +101,7 @@ public struct BrutalistGaugeStyle: GaugeStyle {
             }
         )
         .gaugeStyle(.brute)
-        .environment(\.bruteTheme, .green)
+        .bruteTheme(.green)
     }
     .padding()
     .frame(maxWidth: .infinity, maxHeight: .infinity)

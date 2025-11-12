@@ -98,35 +98,35 @@ fileprivate struct IndeterminateProgressView: View {
     VStack {
         ProgressView("Violet", value: 0.25)
             .progressViewStyle(.brute)
-            .environment(\.bruteTheme, .violet)
+            .bruteTheme(.violet)
 
         ProgressView("Loading Violet...")
             .progressViewStyle(.brute)
-            .environment(\.bruteTheme, .violet)
+            .bruteTheme(.violet)
 
         ProgressView("Blue", value: 0.5)
             .progressViewStyle(.brute)
-            .environment(\.bruteTheme, .blue)
+            .bruteTheme(.blue)
 
         ProgressView("Loading Blue...")
             .progressViewStyle(.brute)
-            .environment(\.bruteTheme, .blue)
+            .bruteTheme(.blue)
 
         ProgressView("Orange", value: 0.75)
             .progressViewStyle(.brute)
-            .environment(\.bruteTheme, .orange)
+            .bruteTheme(.orange)
 
         ProgressView("Loading Orange...")
             .progressViewStyle(.brute)
-            .environment(\.bruteTheme, .orange)
+            .bruteTheme(.orange)
 
         ProgressView("Green", value: 1)
             .progressViewStyle(.brute)
-            .environment(\.bruteTheme, .green)
+            .bruteTheme(.green)
 
         ProgressView("Loading Green...")
             .progressViewStyle(.brute)
-            .environment(\.bruteTheme, .green)
+            .bruteTheme(.green)
     }
     .padding()
     .frame(maxWidth: .infinity, maxHeight: .infinity)

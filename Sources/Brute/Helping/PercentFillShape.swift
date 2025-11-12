@@ -97,5 +97,4 @@ struct PercentFillShape: Shape {
             .border(Color.green)
     }
     .padding()
-    .environment(\.bruteTheme, .blue)
 }

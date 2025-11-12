@@ -57,14 +57,16 @@ private struct BrutalistBadgeLabelStylePreview: View {
             Text(title)
                 .font(theme.font.header)
 
-            Label("Icon Only", systemImage: "leaf")
-                .labelStyle(.bruteBadge(.iconOnly))
-
-            Label("Title Only", systemImage: "person")
-                .labelStyle(.bruteBadge(.titleOnly))
-
-            Label("Title & Icon", systemImage: "globe")
-                .labelStyle(.bruteBadge)
+            HStack {
+                Label("Icon Only", systemImage: "leaf")
+                    .labelStyle(.bruteBadge(.iconOnly))
+                
+                Label("Title Only", systemImage: "person")
+                    .labelStyle(.bruteBadge(.titleOnly))
+                
+                Label("Title & Icon", systemImage: "globe")
+                    .labelStyle(.bruteBadge)
+            }
         }
         .padding(theme.dimen.contentPadding)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -77,16 +79,16 @@ private struct BrutalistBadgeLabelStylePreview: View {
     ScrollView {
         VStack(spacing: 30) {
             BrutalistBadgeLabelStylePreview(title: "Violet")
-                .environment(\.bruteTheme, .violet)
+                .bruteTheme(.violet)
 
             BrutalistBadgeLabelStylePreview(title: "Blue")
-                .environment(\.bruteTheme, .blue)
+                .bruteTheme(.blue)
 
             BrutalistBadgeLabelStylePreview(title: "Orange")
-                .environment(\.bruteTheme, .orange)
+                .bruteTheme(.orange)
 
             BrutalistBadgeLabelStylePreview(title: "Green")
-                .environment(\.bruteTheme, .green)
+                .bruteTheme(.green)
         }
         .padding()
     }

@@ -45,19 +45,19 @@ public struct BrutalistTextFieldStyle: TextFieldStyle {
     VStack {
         TextField("Violet", text: $text)
             .textFieldStyle(.brute)
-            .environment(\.bruteTheme, .violet)
+            .bruteTheme(.violet)
 
         TextField("Blue", text: $text)
             .textFieldStyle(.brute)
-            .environment(\.bruteTheme, .blue)
+            .bruteTheme(.blue)
 
         TextField("Orange", text: $text)
             .textFieldStyle(.brute)
-            .environment(\.bruteTheme, .orange)
+            .bruteTheme(.orange)
 
         TextField("Green", text: $text)
             .textFieldStyle(.brute)
-            .environment(\.bruteTheme, .green)
+            .bruteTheme(.green)
     }
     .padding()
     .frame(maxWidth: .infinity, maxHeight: .infinity)

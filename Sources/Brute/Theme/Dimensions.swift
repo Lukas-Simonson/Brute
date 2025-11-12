@@ -18,6 +18,7 @@ extension BruteTheme {
     }
 }
 
+// MARK: - Default Dimensions
 extension BruteTheme.Dimensions {
     public static var `default`: BruteTheme.Dimensions { lightCurveBottomRight }
 
@@ -56,4 +57,23 @@ extension BruteTheme.Dimensions {
         smallContentPadding: 8,
         contentPadding: 16,
     )
+}
+
+// MARK: - Copy
+extension BruteTheme.Dimensions {
+    func copy(
+        cornerRadius: CGFloat? = nil,
+        shadowOffset: CGSize? = nil,
+        borderWidth: CGFloat? = nil,
+        smallContentPadding: CGFloat? = nil,
+        contentPadding: CGFloat? = nil
+    ) -> BruteTheme.Dimensions {
+        BruteTheme.Dimensions(
+            cornerRadius: cornerRadius ?? self.cornerRadius,
+            shadowOffset: shadowOffset ?? self.shadowOffset,
+            borderWidth: borderWidth ?? self.borderWidth,
+            smallContentPadding: smallContentPadding ?? self.smallContentPadding,
+            contentPadding: contentPadding ?? self.contentPadding
+        )
+    }
 }
