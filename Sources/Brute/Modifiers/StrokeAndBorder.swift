@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension View {
-    func brutified() -> some View {
+    func brutalized() -> some View {
         self.bruteClipped().bruteStroked().bruteShadow()
     }
 

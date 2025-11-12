@@ -23,7 +23,7 @@ public struct BrutalistDisclosureGroupStyle: DisclosureGroupStyle {
                 content(with: configuration)
             }
         }
-        .brutified()
+        .brutalized()
     }
 
     private func header(with config: Configuration) -> some View {
@@ -34,7 +34,7 @@ public struct BrutalistDisclosureGroupStyle: DisclosureGroupStyle {
                 .contentTransition(.symbolEffect(.replace))
         }
         .font(theme.font.header)
-        .padding()
+        .padding(theme.dimen.contentPadding)
         .background(theme.color.secondaryBackground)
         .onTapGesture {
             withAnimation(.default) {
@@ -54,22 +54,46 @@ public struct BrutalistDisclosureGroupStyle: DisclosureGroupStyle {
     private func content(with config: Configuration) -> some View {
         config.content
             .transition(.move(edge: .top))
-            .padding()
+            .padding(theme.dimen.contentPadding)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(theme.color.background)
     }
 }
 
 #Preview {
-    @Previewable @Environment(\.bruteTheme) var theme
-
     ScrollView {
-        VStack {
-            DisclosureGroup("Title Header") {
-                Text("L\no\nn\ng\n\nB\no\nd\ny")
-            }
+        VStack(spacing: 30) {
+            BrutalistDisclosureGroupStylePreview(title: "Violet")
+                .environment(\.bruteTheme, BruteTheme.violet)
+
+            BrutalistDisclosureGroupStylePreview(title: "Blue")
+                .environment(\.bruteTheme, BruteTheme.blue)
+
+            BrutalistDisclosureGroupStylePreview(title: "Orange")
+                .environment(\.bruteTheme, BruteTheme.orange)
+
+            BrutalistDisclosureGroupStylePreview(title: "Green")
+                .environment(\.bruteTheme, BruteTheme.green)
+        }
+        .padding()
+    }
+}
+
+fileprivate struct BrutalistDisclosureGroupStylePreview: View {
+
+    @Environment(\.bruteColor) private var color
+
+    @State private var customExpanded = true
+
+    let title: String
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(title)
+                .font(.title)
 
             DisclosureGroup(
+                isExpanded: $customExpanded,
                 content: {
                     Text("This uses a custom header.")
                 },
@@ -77,9 +101,14 @@ public struct BrutalistDisclosureGroupStyle: DisclosureGroupStyle {
                     Label("Custom Header ", systemImage: "globe")
                 }
             )
+
+            DisclosureGroup("Title Header") {
+                Text("L\no\nn\ng\n\nB\no\nd\ny")
+            }
         }
         .padding()
+        .background(color.background)
         .disclosureGroupStyle(.brutalist)
+        .brutalized()
     }
-    .background(theme.color.background)
 }

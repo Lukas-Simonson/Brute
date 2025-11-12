@@ -14,10 +14,30 @@ public struct BruteTheme: Sendable {
 }
 
 extension BruteTheme {
-    public static let `default` = BruteTheme(
-        color: .default,
+    public static var `default`: BruteTheme { violet }
+
+    public static let violet = BruteTheme(
+        color: .violet,
         font: .default,
-        dimen: .default
+        dimen: .lightCurveBottomRight
+    )
+
+    public static let blue = BruteTheme(
+        color: .blue,
+        font: .default,
+        dimen: .straightTopRight
+    )
+
+    public static let green = BruteTheme(
+        color: .green,
+        font: .default,
+        dimen: .heavyCurveDown
+    )
+
+    public static let orange = BruteTheme(
+        color: .orange,
+        font: .default,
+        dimen: .medCurveTopLeft
     )
 }
 
