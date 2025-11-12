@@ -8,19 +8,19 @@
 import SwiftUI
 
 extension View {
-    func brutalized() -> some View {
+    nonisolated func brutalized() -> some View {
         self.bruteClipped().bruteStroked().bruteShadow()
     }
 
-    func bruteClipped() -> some View {
+    nonisolated func bruteClipped() -> some View {
         self.modifier(BruteClip())
     }
 
-    func bruteStroked() -> some View {
+    nonisolated func bruteStroked() -> some View {
         self.modifier(BruteStroke())
     }
 
-    func bruteShadow() -> some View {
+    nonisolated func bruteShadow() -> some View {
         self.modifier(BruteShadow())
     }
 }
