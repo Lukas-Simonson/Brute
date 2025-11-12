@@ -13,6 +13,7 @@ extension BruteTheme {
         let shadowOffset: CGSize
         let borderWidth: CGFloat
 
+        let smallContentPadding: CGFloat
         let contentPadding: CGFloat
     }
 }
@@ -25,6 +26,7 @@ extension BruteTheme.Dimensions {
         shadowOffset: CGSize(width: 4, height: 4),
         borderWidth: 2,
 
+        smallContentPadding: 8,
         contentPadding: 16,
     )
 
@@ -33,6 +35,7 @@ extension BruteTheme.Dimensions {
         shadowOffset: CGSize(width: 4, height: -4),
         borderWidth: 2,
 
+        smallContentPadding: 8,
         contentPadding: 16,
     )
 
@@ -41,6 +44,7 @@ extension BruteTheme.Dimensions {
         shadowOffset: CGSize(width: 0, height: 4),
         borderWidth: 2,
 
+        smallContentPadding: 8,
         contentPadding: 16,
     )
 
@@ -49,6 +53,7 @@ extension BruteTheme.Dimensions {
         shadowOffset: CGSize(width: -4, height: -4),
         borderWidth: 2,
 
+        smallContentPadding: 8,
         contentPadding: 16,
     )
 }
