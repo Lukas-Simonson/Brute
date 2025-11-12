@@ -25,11 +25,11 @@ public struct BrutalistTextFieldStyle: TextFieldStyle {
             .tint(theme.color.secondaryBackground)
             .bruteClipped()
             .bruteStroked()
-            .padding(5)
             .background {
                 if isFocused {
                     RoundedRectangle(cornerRadius: theme.dimen.cornerRadius)
-                        .stroke(theme.color.border, lineWidth: theme.dimen.borderWidth)
+                        .fill(theme.color.border)
+                        .offset(theme.dimen.shadowOffset)
                 }
             }
             .onTapGesture {
