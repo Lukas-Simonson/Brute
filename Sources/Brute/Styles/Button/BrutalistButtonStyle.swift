@@ -18,6 +18,7 @@ public struct BrutalistButtonStyle: ButtonStyle {
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding(theme.dimen.contentPadding)
+            .foregroundStyle(theme.color.secondaryForeground)
             .background(theme.color.secondaryBackground)
             .bruteClipped()
             .bruteStroked()

@@ -29,7 +29,7 @@ public struct BrutalistGaugeStyle: GaugeStyle {
                     .background(progressView(value: configuration.value))
             } else {
                 progressView(value: configuration.value)
-                    .frame(maxHeight: 20)
+                    .frame(height: 20)
             }
 
             HStack {

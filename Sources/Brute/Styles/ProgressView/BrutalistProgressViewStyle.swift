@@ -24,14 +24,14 @@ public struct BrutalistProgressViewStyle: ProgressViewStyle {
                 PercentFillShape(percent: fractionCompleted, cornerRadius: theme.dimen.cornerRadius)
                     .fill(theme.color.secondaryBackground)
                     .stroke(theme.color.border, lineWidth: theme.dimen.borderWidth)
-                    .frame(maxHeight: 20)
+                    .frame(height: 20)
                     .background(theme.color.tertiaryBackground)
                     .bruteClipped()
                     .bruteStroked()
             } else {
                 // Indeterminate progress view
                 IndeterminateProgressView()
-                    .frame(maxHeight: 20)
+                    .frame(height: 20)
                     .background(theme.color.tertiaryBackground)
                     .bruteClipped()
                     .bruteStroked()

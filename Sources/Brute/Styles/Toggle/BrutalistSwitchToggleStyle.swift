@@ -26,7 +26,7 @@ public struct BrutalistSwitchToggleStyle: ToggleStyle {
                 .frame(maxHeight: 25)
                 .overlay(alignment: configuration.isOn ? .trailing : .leading) {
                     Circle()
-                        .fill(theme.color.tertiaryBackground)
+                        .fill(theme.color.tertiaryForeground)
                         .stroke(theme.color.border, lineWidth: theme.dimen.borderWidth)
                         .padding(.vertical, 4)
                         .padding(.horizontal, 5)

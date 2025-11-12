@@ -19,6 +19,7 @@ struct ThemePicker<Content: View>: View {
 
     @Binding var isExpanded: Bool
     @State private var theme: BruteTheme = .default
+    @Environment(\.colorScheme) var colorScheme
 
     let content: () -> Content
 
@@ -65,7 +66,7 @@ struct ThemePicker<Content: View>: View {
         .textFieldStyle(.brute)
         .toggleStyle(.bruteSwitch)
 
-        .background(theme.color.background)
+        .background(theme.colorTheme.colors(for: colorScheme).background)
         .bruteTheme(theme)
     }
 }

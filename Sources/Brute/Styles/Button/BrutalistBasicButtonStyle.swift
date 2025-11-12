@@ -17,6 +17,7 @@ public struct BrutalistBasicButtonStyle: ButtonStyle {
 
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
+            .foregroundStyle(theme.color.secondaryForeground)
             .padding(theme.dimen.contentPadding)
             .background(
                 theme.color.secondaryBackground
@@ -46,4 +47,5 @@ public struct BrutalistBasicButtonStyle: ButtonStyle {
             .bruteTheme(.green)
     }
     .padding()
+    .background(Color.gray)
 }

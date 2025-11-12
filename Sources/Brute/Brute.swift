@@ -4,16 +4,25 @@
 import SwiftUI
 
 extension EnvironmentValues {
-    @Entry public var bruteColor: BruteTheme.Colors = .default
+    @Entry public var bruteColorTheme: BruteColorTheme = .default
     @Entry public var bruteFont: BruteTheme.Typography = .default
     @Entry public var bruteDimen: BruteTheme.Dimensions = .default
 
+    public var bruteColor: BruteTheme.Colors {
+        bruteColorTheme.colors(for: colorScheme)
+    }
+
     public var bruteTheme: BruteTheme {
         get {
-            BruteTheme(color: bruteColor, font: bruteFont, dimen: bruteDimen)
+            BruteTheme(
+                scheme: colorScheme,
+                colorTheme: bruteColorTheme,
+                font: bruteFont,
+                dimen: bruteDimen
+            )
         }
         set {
-            bruteColor = newValue.color
+            bruteColorTheme = newValue.colorTheme
             bruteFont = newValue.font
             bruteDimen = newValue.dimen
         }
@@ -29,8 +38,8 @@ extension View {
         self.environment(\.bruteFont, font)
     }
 
-    public func bruteColor(_ colors: BruteTheme.Colors) -> some View {
-        self.environment(\.bruteColor, colors)
+    public func bruteColor(_ colors: BruteColorTheme) -> some View {
+        self.environment(\.bruteColorTheme, colors)
     }
 
     public func bruteDimen(_ dimens: BruteTheme.Dimensions) -> some View {
