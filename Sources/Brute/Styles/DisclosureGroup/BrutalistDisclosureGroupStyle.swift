@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension DisclosureGroupStyle where Self == BrutalistDisclosureGroupStyle {
-    public static var brutalist: Self { BrutalistDisclosureGroupStyle() }
+    public static var brute: Self { BrutalistDisclosureGroupStyle() }
 }
 
 public struct BrutalistDisclosureGroupStyle: DisclosureGroupStyle {
@@ -108,7 +108,7 @@ fileprivate struct BrutalistDisclosureGroupStylePreview: View {
         }
         .padding()
         .background(color.background)
-        .disclosureGroupStyle(.brutalist)
+        .disclosureGroupStyle(.brute)
         .brutalized()
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension ToggleStyle where Self == BrutalistSwitchToggleStyle {
-    public static var brutalistSwitch: Self { BrutalistSwitchToggleStyle() }
+    public static var bruteSwitch: Self { BrutalistSwitchToggleStyle() }
 }
 
 public struct BrutalistSwitchToggleStyle: ToggleStyle {
@@ -50,25 +50,25 @@ public struct BrutalistSwitchToggleStyle: ToggleStyle {
         Toggle(isOn: $isOn) {
             Text("Violet Switch Toggle")
         }
-        .toggleStyle(.brutalistSwitch)
+        .toggleStyle(.bruteSwitch)
         .environment(\.bruteTheme, .violet)
 
         Toggle(isOn: $isOn) {
             Text("Blue Switch Toggle")
         }
-        .toggleStyle(.brutalistSwitch)
+        .toggleStyle(.bruteSwitch)
         .environment(\.bruteTheme, .blue)
 
         Toggle(isOn: $isOn) {
             Text("Orange Switch Toggle")
         }
-        .toggleStyle(.brutalistSwitch)
+        .toggleStyle(.bruteSwitch)
         .environment(\.bruteTheme, .orange)
 
         Toggle(isOn: $isOn) {
             Text("Green Switch Toggle")
         }
-        .toggleStyle(.brutalistSwitch)
+        .toggleStyle(.bruteSwitch)
         .environment(\.bruteTheme, .green)
     }
     .padding()

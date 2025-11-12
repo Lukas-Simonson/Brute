@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension ToggleStyle where Self == BrutalistCheckboxToggleStyle {
-    public static var brutalistCheckbox: Self { BrutalistCheckboxToggleStyle() }
+    public static var bruteCheckbox: Self { BrutalistCheckboxToggleStyle() }
 }
 
 public struct BrutalistCheckboxToggleStyle: ToggleStyle {
@@ -48,25 +48,25 @@ public struct BrutalistCheckboxToggleStyle: ToggleStyle {
         Toggle(isOn: $isOn) {
             Text("Violet Checkbox")
         }
-        .toggleStyle(.brutalistCheckbox)
+        .toggleStyle(.bruteCheckbox)
         .environment(\.bruteTheme, .violet)
 
         Toggle(isOn: $isOn) {
             Text("Blue Checkbox")
         }
-        .toggleStyle(.brutalistCheckbox)
+        .toggleStyle(.bruteCheckbox)
         .environment(\.bruteTheme, .blue)
 
         Toggle(isOn: $isOn) {
             Text("Orange Checkbox")
         }
-        .toggleStyle(.brutalistCheckbox)
+        .toggleStyle(.bruteCheckbox)
         .environment(\.bruteTheme, .orange)
 
         Toggle(isOn: $isOn) {
             Text("Green Checkbox")
         }
-        .toggleStyle(.brutalistCheckbox)
+        .toggleStyle(.bruteCheckbox)
         .environment(\.bruteTheme, .green)
     }
     .padding()

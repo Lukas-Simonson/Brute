@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension ProgressViewStyle where Self == BrutalistProgressViewStyle {
-    static var brutalist: Self { BrutalistProgressViewStyle() }
+    static var brute: Self { BrutalistProgressViewStyle() }
 }
 
 public struct BrutalistProgressViewStyle: ProgressViewStyle {
@@ -97,35 +97,35 @@ fileprivate struct IndeterminateProgressView: View {
 
     VStack {
         ProgressView("Violet", value: 0.25)
-            .progressViewStyle(.brutalist)
+            .progressViewStyle(.brute)
             .environment(\.bruteTheme, .violet)
 
         ProgressView("Loading Violet...")
-            .progressViewStyle(.brutalist)
+            .progressViewStyle(.brute)
             .environment(\.bruteTheme, .violet)
 
         ProgressView("Blue", value: 0.5)
-            .progressViewStyle(.brutalist)
+            .progressViewStyle(.brute)
             .environment(\.bruteTheme, .blue)
 
         ProgressView("Loading Blue...")
-            .progressViewStyle(.brutalist)
+            .progressViewStyle(.brute)
             .environment(\.bruteTheme, .blue)
 
         ProgressView("Orange", value: 0.75)
-            .progressViewStyle(.brutalist)
+            .progressViewStyle(.brute)
             .environment(\.bruteTheme, .orange)
 
         ProgressView("Loading Orange...")
-            .progressViewStyle(.brutalist)
+            .progressViewStyle(.brute)
             .environment(\.bruteTheme, .orange)
 
         ProgressView("Green", value: 1)
-            .progressViewStyle(.brutalist)
+            .progressViewStyle(.brute)
             .environment(\.bruteTheme, .green)
 
         ProgressView("Loading Green...")
-            .progressViewStyle(.brutalist)
+            .progressViewStyle(.brute)
             .environment(\.bruteTheme, .green)
     }
     .padding()

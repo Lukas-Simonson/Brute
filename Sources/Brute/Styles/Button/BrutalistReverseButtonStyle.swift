@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension ButtonStyle where Self == BrutalistReverseButtonStyle {
-    public static var brutalistReverse: Self { BrutalistReverseButtonStyle() }
+    public static var bruteReverse: Self { BrutalistReverseButtonStyle() }
 }
 
 public struct BrutalistReverseButtonStyle: ButtonStyle {
@@ -29,19 +29,19 @@ public struct BrutalistReverseButtonStyle: ButtonStyle {
 #Preview {
     VStack(spacing: 30) {
         Button("Violet Button") { /* does nothing */ }
-            .buttonStyle(.brutalistReverse)
+            .buttonStyle(.bruteReverse)
             .environment(\.bruteTheme, .violet)
 
         Button("Blue Button") { /* does nothing */ }
-            .buttonStyle(.brutalistReverse)
+            .buttonStyle(.bruteReverse)
             .environment(\.bruteTheme, .blue)
 
         Button("Orange Button") { /* does nothing */ }
-            .buttonStyle(.brutalistReverse)
+            .buttonStyle(.bruteReverse)
             .environment(\.bruteTheme, .orange)
 
         Button("Green Button") { /* does nothing */ }
-            .buttonStyle(.brutalistReverse)
+            .buttonStyle(.bruteReverse)
             .environment(\.bruteTheme, .green)
     }
     .padding()

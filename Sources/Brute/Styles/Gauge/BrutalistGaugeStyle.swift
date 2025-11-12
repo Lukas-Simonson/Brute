@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension GaugeStyle where Self == BrutalistGaugeStyle {
-    public static var brutalist: Self { BrutalistGaugeStyle() }
+    public static var brute: Self { BrutalistGaugeStyle() }
 }
 
 public struct BrutalistGaugeStyle: GaugeStyle {
@@ -58,7 +58,7 @@ public struct BrutalistGaugeStyle: GaugeStyle {
         Gauge(value: 0.5) {
             Text("Violet")
         }
-        .gaugeStyle(.brutalist)
+        .gaugeStyle(.brute)
         .environment(\.bruteTheme, .violet)
 
         Gauge(
@@ -76,13 +76,13 @@ public struct BrutalistGaugeStyle: GaugeStyle {
                 Text("100%")
             }
         )
-        .gaugeStyle(.brutalist)
+        .gaugeStyle(.brute)
         .environment(\.bruteTheme, .blue)
 
         Gauge(value: 0.5) {
             Text("Orange")
         }
-        .gaugeStyle(.brutalist)
+        .gaugeStyle(.brute)
         .environment(\.bruteTheme, .orange)
 
         Gauge(
@@ -100,7 +100,7 @@ public struct BrutalistGaugeStyle: GaugeStyle {
                 Text("100%")
             }
         )
-        .gaugeStyle(.brutalist)
+        .gaugeStyle(.brute)
         .environment(\.bruteTheme, .green)
     }
     .padding()

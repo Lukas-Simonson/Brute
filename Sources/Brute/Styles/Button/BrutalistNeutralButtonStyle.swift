@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension ButtonStyle where Self == BrutalistNeutralButtonStyle {
-    public static var brutalistNeutral: Self { BrutalistNeutralButtonStyle() }
+    public static var bruteNeutral: Self { BrutalistNeutralButtonStyle() }
 }
 
 public struct BrutalistNeutralButtonStyle: ButtonStyle {
@@ -29,19 +29,19 @@ public struct BrutalistNeutralButtonStyle: ButtonStyle {
 #Preview {
     VStack(spacing: 30) {
         Button("Violet Button") { /* does nothing */ }
-            .buttonStyle(.brutalistNeutral)
+            .buttonStyle(.bruteNeutral)
             .environment(\.bruteTheme, .violet)
 
         Button("Blue Button") { /* does nothing */ }
-            .buttonStyle(.brutalistNeutral)
+            .buttonStyle(.bruteNeutral)
             .environment(\.bruteTheme, .blue)
 
         Button("Orange Button") { /* does nothing */ }
-            .buttonStyle(.brutalistNeutral)
+            .buttonStyle(.bruteNeutral)
             .environment(\.bruteTheme, .orange)
 
         Button("Green Button") { /* does nothing */ }
-            .buttonStyle(.brutalistNeutral)
+            .buttonStyle(.bruteNeutral)
             .environment(\.bruteTheme, .green)
     }
     .padding()
