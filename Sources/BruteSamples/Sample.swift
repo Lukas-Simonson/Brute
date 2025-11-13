@@ -188,7 +188,7 @@ extension Sample {
     private var pickerSamples: some View {
         DisclosureGroup("Pickers", isExpanded: $groups.pickers) {
             BrutePicker(selection: $picked) {
-                ForEach(0..<3) { i in
+                ForEach(0..<4) { i in
                     Text("Value: \(i)")
                         .tag(i)
                 }
