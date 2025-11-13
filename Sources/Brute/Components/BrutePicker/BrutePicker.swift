@@ -10,6 +10,7 @@ import SwiftUI
 public struct BrutePicker<Value: Hashable, Content: View>: View {
 
     @Environment(\.bruteTheme) private var theme
+    @Environment(\.brutePickerStyle) private var style
 
     @Binding public var selection: Value
 
@@ -22,27 +23,26 @@ public struct BrutePicker<Value: Hashable, Content: View>: View {
     }
 
     public var body: some View {
-        HStack(spacing: theme.dimen.smallContentPadding) {
-            ForEach(subviews: content()) { childView in
-                let tag = childView.containerValues.tag(for: Value.self)
+        style.makeBody(config: .init(
+            theme: theme,
+            selection: AnyHashable(selection),
+            children: children.erased(),
+        ))
+    }
 
-                childView
-                    .frame(maxWidth: .infinity)
-                    .padding(theme.dimen.smallContentPadding)
-                    .background {
-                        RoundedRectangle(cornerRadius: theme.dimen.cornerRadius)
-                            .fill(tag == selection ? theme.color.secondaryBackground : theme.color.background)
-                            .stroke(tag == selection ? theme.color.border : .clear, lineWidth: theme.dimen.borderWidth)
-                    }
-                    .onTapGesture { selection = tag ?? selection }
+    private var children: some View {
+        ForEach(subviews: content()) { child in
+            let tag = child.containerValues.tag(for: Value.self)
 
-            }
-            .animation(.linear(duration: 0.1), value: selection)
+            style.makeChild(config: .init(
+                theme: theme,
+                view: child.erased(),
+                isSelected: Binding(
+                    get: { selection == tag },
+                    set: { if $0, let tag { selection = tag } }
+                )
+            ))
         }
-        .padding(theme.dimen.smallContentPadding)
-        .background(theme.color.background)
-        .bruteClipped()
-        .bruteStroked()
     }
 }
 
