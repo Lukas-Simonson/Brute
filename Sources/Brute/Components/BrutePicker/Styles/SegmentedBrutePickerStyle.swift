@@ -7,30 +7,39 @@
 
 import SwiftUI
 
+
+extension BrutePickerStyle where Self == SegmentedBrutePickerStyle {
+    public static var segmented: Self { SegmentedBrutePickerStyle() }
+}
+
 public struct SegmentedBrutePickerStyle: BrutePickerStyle {
 
-    public func makeBody(config: Configuration) -> AnyView {
-        HStack(spacing: config.theme.dimen.smallContentPadding) {
+    @Environment(\.bruteTheme) var theme
+
+    public func makeBody(config: Configuration) -> some View {
+        let theme = config.environment.bruteTheme
+
+        return HStack(spacing: theme.dimen.smallContentPadding) {
             config.children
         }
         .animation(.linear(duration: 0.1), value: config.selection)
-        .padding(config.theme.dimen.smallContentPadding)
-        .background(config.theme.color.background)
+        .padding(theme.dimen.smallContentPadding)
+        .background(theme.color.background)
         .bruteClipped()
         .bruteStroked()
-        .erased()
     }
 
-    public func makeChild(config: ChildConfiguration) -> AnyView {
-        config.view
+    public func makeChild(config: ChildConfiguration) -> some View {
+        let theme = config.environment.bruteTheme
+
+        return config.label
             .frame(maxWidth: .infinity)
-            .padding(config.theme.dimen.smallContentPadding)
+            .padding(theme.dimen.smallContentPadding)
             .background {
-                RoundedRectangle(cornerRadius: config.theme.dimen.cornerRadius)
-                    .fill(config.isSelected ? config.theme.color.secondaryBackground : config.theme.color.background)
-                    .stroke(config.isSelected ? config.theme.color.border : .clear, lineWidth: config.theme.dimen.borderWidth)
+                RoundedRectangle(cornerRadius: theme.dimen.cornerRadius)
+                    .fill(config.isSelected ? theme.color.secondaryBackground : theme.color.background)
+                    .stroke(config.isSelected ? theme.color.border : .clear, lineWidth: theme.dimen.borderWidth)
             }
             .onTapGesture { config.isSelected = true }
-            .erased()
     }
 }

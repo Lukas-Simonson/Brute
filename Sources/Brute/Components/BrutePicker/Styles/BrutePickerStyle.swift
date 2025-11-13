@@ -7,33 +7,38 @@
 
 import SwiftUI
 
-extension EnvironmentValues {
-    @Entry
-    var brutePickerStyle: BrutePickerStyle = SegmentedBrutePickerStyle()
-}
-
-extension View {
-    func brutePickerStyle(_ style: BrutePickerStyle) -> some View {
-        self.environment(\.brutePickerStyle, style)
-    }
-}
-
-public protocol BrutePickerStyle {
+public protocol BrutePickerStyle: Sendable {
     typealias Configuration = BrutePickerStyleConfiguration
     typealias ChildConfiguration = BrutePickerStyleChildConfiguration
 
-    @MainActor func makeBody(config: Configuration) -> AnyView
-    @MainActor func makeChild(config: ChildConfiguration) -> AnyView
+    associatedtype Body: View
+    associatedtype Child: View
+
+    @MainActor
+    func makeBody(config: Configuration) -> Body
+
+    @MainActor
+    func makeChild(config: ChildConfiguration) -> Child
 }
 
+@MainActor
 public struct BrutePickerStyleConfiguration {
-    let theme: BruteTheme
+    let environment: EnvironmentValues
     let selection: AnyHashable
-    let children: AnyView
+    let children: Children
+
+    struct Children: View {
+        let body: AnyView
+    }
 }
 
+@MainActor
 public struct BrutePickerStyleChildConfiguration {
-    let theme: BruteTheme
-    let view: AnyView
+    let environment: EnvironmentValues
+    let label: Label
     @Binding var isSelected: Bool
+
+    struct Label: View {
+        let body: AnyView
+    }
 }

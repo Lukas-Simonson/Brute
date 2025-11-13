@@ -62,3 +62,4 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 Sources/Brute/.DS_Store
 Sources/Brute/Components/.DS_Store
+.DS_Store

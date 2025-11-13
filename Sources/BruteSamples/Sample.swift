@@ -193,6 +193,7 @@ extension Sample {
                         .tag(i)
                 }
             }
+            .brutePickerStyle(.segmented)
         }
     }
 }

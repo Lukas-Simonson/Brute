@@ -9,7 +9,7 @@ import SwiftUI
 
 public struct BrutePicker<Value: Hashable, Content: View>: View {
 
-    @Environment(\.bruteTheme) private var theme
+    @Environment(\.self) private var environment: EnvironmentValues
     @Environment(\.brutePickerStyle) private var style
 
     @Binding public var selection: Value
@@ -23,10 +23,10 @@ public struct BrutePicker<Value: Hashable, Content: View>: View {
     }
 
     public var body: some View {
-        style.makeBody(config: .init(
-            theme: theme,
+        style.makeBody(config: AnyBrutePickerStyle.Configuration(
+            environment: environment,
             selection: AnyHashable(selection),
-            children: children.erased(),
+            children: BrutePickerStyleConfiguration.Children(body: AnyView(children))
         ))
     }
 
@@ -34,9 +34,9 @@ public struct BrutePicker<Value: Hashable, Content: View>: View {
         ForEach(subviews: content()) { child in
             let tag = child.containerValues.tag(for: Value.self)
 
-            style.makeChild(config: .init(
-                theme: theme,
-                view: child.erased(),
+            style.makeChild(config: AnyBrutePickerStyle.ChildConfiguration(
+                environment: environment,
+                label: BrutePickerStyleChildConfiguration.Label(body: AnyView(child)),
                 isSelected: Binding(
                     get: { selection == tag },
                     set: { if $0, let tag { selection = tag } }
