@@ -14,6 +14,7 @@ struct Sample: View {
 
     @State private var textInput = ""
     @State private var toggled = false
+    @State private var picked = 0
 
     var body: some View {
         ThemePicker(isExpanded: $groups.theme) {
@@ -26,6 +27,7 @@ struct Sample: View {
 
                 textFieldSamples
                 toggleSamples
+                pickerSamples
             }
         }
     }
@@ -43,6 +45,7 @@ struct Sample: View {
 
         var textFields = Self.default
         var toggles = Self.default
+        var pickers = Self.default
     }
 }
 
@@ -137,7 +140,7 @@ extension Sample {
     }
 }
 
-// MARK: Progress View
+// MARK: Progress Views
 extension Sample {
     private var progressViewSamples: some View {
         DisclosureGroup("Progress Views", isExpanded: $groups.progressViews) {
@@ -149,7 +152,7 @@ extension Sample {
     }
 }
 
-// MARK: TextField
+// MARK: Text Fields
 extension Sample {
     private var textFieldSamples: some View {
         DisclosureGroup("Text Fields", isExpanded: $groups.textFields) {
@@ -161,7 +164,7 @@ extension Sample {
     }
 }
 
-// MARK: TextField
+// MARK: Toggles
 extension Sample {
     private var toggleSamples: some View {
         DisclosureGroup("Toggles", isExpanded: $groups.toggles) {
@@ -175,6 +178,20 @@ extension Sample {
                 Toggle(isOn: $toggled) {
                     Text("Checkbox")
                 }.toggleStyle(.bruteCheckbox)
+            }
+        }
+    }
+}
+
+// MARK: Pickers
+extension Sample {
+    private var pickerSamples: some View {
+        DisclosureGroup("Pickers", isExpanded: $groups.pickers) {
+            BrutePicker(selection: $picked) {
+                ForEach(0..<3) { i in
+                    Text("Value: \(i)")
+                        .tag(i)
+                }
             }
         }
     }
