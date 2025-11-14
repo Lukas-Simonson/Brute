@@ -14,31 +14,29 @@ extension BrutePickerStyle where Self == SegmentedBrutePickerStyle {
 
 public struct SegmentedBrutePickerStyle: BrutePickerStyle {
 
-    @Environment(\.bruteTheme) var theme
-
     public func makeBody(config: Configuration) -> some View {
-        let theme = config.environment.bruteTheme
+        let context = config.environment.bruteContext
 
-        return HFlow(spacing: theme.dimen.smallContentPadding) {
+        return HFlow(spacing: context.dimen.paddingSmall) {
             config.children
         }
         .animation(.linear(duration: 0.1), value: config.selection)
-        .padding(theme.dimen.smallContentPadding)
-        .background(theme.color.background)
+        .padding(context.dimen.paddingSmall)
+        .background(context.color.background)
         .bruteClipped()
         .bruteStroked()
     }
 
     public func makeChild(config: ChildConfiguration) -> some View {
-        let theme = config.environment.bruteTheme
+        let context = config.environment.bruteContext
 
         return config.label
             .frame(maxWidth: .infinity)
-            .padding(theme.dimen.smallContentPadding)
+            .padding(context.dimen.paddingSmall)
             .background {
-                RoundedRectangle(cornerRadius: theme.dimen.cornerRadius)
-                    .fill(config.isSelected ? theme.color.secondaryBackground : theme.color.background)
-                    .stroke(config.isSelected ? theme.color.border : .clear, lineWidth: theme.dimen.borderWidth)
+                RoundedRectangle(cornerRadius: context.dimen.cornerRadius)
+                    .fill(config.isSelected ? context.color.accentBackground : context.color.background)
+                    .stroke(config.isSelected ? context.color.border : .clear, lineWidth: context.dimen.borderWidth)
             }
             .onTapGesture { config.isSelected = true }
     }
@@ -48,30 +46,33 @@ public struct SegmentedBrutePickerStyle: BrutePickerStyle {
     @Previewable @State var selection = "Account"
     let tabs = ["Account", "Profile", "Settings", "Social Media", "Now Playing"]
 
-    VStack {
-        BrutePicker(selection: $selection) {
-            ForEach(tabs, id: \.self) { value in
-                Text(value)
-            }
-        }.bruteTheme(.violet)
+    BruteStyle {
+        VStack {
+            BrutePicker(selection: $selection) {
+                ForEach(tabs, id: \.self) { value in
+                    Text(value)
+                }
+            }.withLeveledBruteTheme(.violet)
 
-        BrutePicker(selection: $selection) {
-            ForEach(tabs, id: \.self) { value in
-                Text(value)
-            }
-        }.bruteTheme(.blue)
+            BrutePicker(selection: $selection) {
+                ForEach(tabs, id: \.self) { value in
+                    Text(value)
+                }
+            }.withLeveledBruteTheme(.blue)
 
-        BrutePicker(selection: $selection) {
-            ForEach(tabs, id: \.self) { value in
-                Text(value)
-            }
-        }.bruteTheme(.orange)
+            BrutePicker(selection: $selection) {
+                ForEach(tabs, id: \.self) { value in
+                    Text(value)
+                }
+            }.withLeveledBruteTheme(.orange)
 
-        BrutePicker(selection: $selection) {
-            ForEach(tabs, id: \.self) { value in
-                Text(value)
-            }
-        }.bruteTheme(.green)
+            BrutePicker(selection: $selection) {
+                ForEach(tabs, id: \.self) { value in
+                    Text(value)
+                }
+            }.withLeveledBruteTheme(.green)
+        }
+        .brutePickerStyle(.segmented)
+        .padding()
     }
-    .padding()
 }

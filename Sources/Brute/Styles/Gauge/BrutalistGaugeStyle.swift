@@ -52,8 +52,6 @@ public struct BrutalistGaugeStyle: GaugeStyle {
 
 #Preview {
 
-    @Previewable @Environment(\.bruteTheme) var theme
-
     BruteStyle {
         VStack {
             Gauge(value: 0.5) {

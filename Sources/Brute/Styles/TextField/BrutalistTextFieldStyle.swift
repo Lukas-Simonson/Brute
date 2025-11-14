@@ -39,7 +39,6 @@ public struct BrutalistTextFieldStyle: TextFieldStyle {
 
 #Preview {
 
-    @Previewable @Environment(\.bruteTheme) var theme
     @Previewable @State var text = ""
 
     BruteStyle {
