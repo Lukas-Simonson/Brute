@@ -13,22 +13,22 @@ extension TextFieldStyle where Self == BrutalistTextFieldStyle {
 
 public struct BrutalistTextFieldStyle: TextFieldStyle {
 
-    @Environment(\.bruteTheme) private var theme
+    @Environment(\.bruteContext) private var context
     @FocusState private var isFocused
 
     public func _body(configuration: TextField<_Label>) -> some View {
         configuration
             .focused($isFocused)
-            .padding(theme.dimen.contentPadding)
-            .background(theme.color.tertiaryBackground)
-            .foregroundStyle(theme.color.tertiaryForeground)
-            .tint(theme.color.secondaryBackground)
+            .padding(context.dimen.paddingMedium)
+            .background(context.color.neutralBackground)
+            .foregroundStyle(context.color.neutralForeground)
+            .tint(context.color.accentBackground)
             .bruteClipped()
             .bruteStroked()
             .background {
-                RoundedRectangle(cornerRadius: theme.dimen.cornerRadius)
-                    .fill(theme.color.border)
-                    .offset(isFocused ? theme.dimen.shadowOffset : .zero)
+                RoundedRectangle(cornerRadius: context.dimen.cornerRadius)
+                    .fill(context.color.border)
+                    .offset(isFocused ? context.dimen.shadowOffset : .zero)
             }
             .animation(.default, value: isFocused)
             .onTapGesture {
@@ -39,28 +39,24 @@ public struct BrutalistTextFieldStyle: TextFieldStyle {
 
 #Preview {
 
-    @Previewable @Environment(\.bruteTheme) var theme
     @Previewable @State var text = ""
 
-    VStack {
-        TextField("Violet", text: $text)
-            .textFieldStyle(.brute)
-            .bruteTheme(.violet)
+    BruteStyle {
+        VStack {
+            TextField("Violet", text: $text)
+                .bruteTheme(.violet)
 
-        TextField("Blue", text: $text)
-            .textFieldStyle(.brute)
-            .bruteTheme(.blue)
+            TextField("Blue", text: $text)
+                .bruteTheme(.blue)
 
-        TextField("Orange", text: $text)
-            .textFieldStyle(.brute)
-            .bruteTheme(.orange)
+            TextField("Orange", text: $text)
+                .bruteTheme(.orange)
 
-        TextField("Green", text: $text)
-            .textFieldStyle(.brute)
-            .bruteTheme(.green)
+            TextField("Green", text: $text)
+                .bruteTheme(.green)
+        }
+        .padding()
+        .textFieldStyle(.brute)
     }
-    .padding()
-    .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .background(theme.color.background)
 }
 

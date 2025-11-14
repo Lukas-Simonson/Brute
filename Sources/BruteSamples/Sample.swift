@@ -86,6 +86,7 @@ extension Sample {
                 Text("Badge:")
 
                 Label("Both", systemImage: "photo.artframe")
+                    .labelStyle(.bruteBadge)
 
                 Label("Title Only", systemImage: "photo.artframe")
                     .labelStyle(.bruteBadge(.titleOnly))
@@ -160,6 +161,7 @@ extension Sample {
                 TextField("Name:", text: $textInput)
                 TextField("Email:", text: $textInput)
             }
+            .textFieldStyle(.brute)
         }
     }
 }

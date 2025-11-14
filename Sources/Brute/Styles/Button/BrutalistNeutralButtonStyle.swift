@@ -13,39 +13,40 @@ extension ButtonStyle where Self == BrutalistNeutralButtonStyle {
 
 public struct BrutalistNeutralButtonStyle: ButtonStyle {
 
-    @Environment(\.bruteTheme) private var theme
+    @Environment(\.bruteContext) private var context
 
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .padding(theme.dimen.contentPadding)
-            .foregroundStyle(theme.color.tertiaryForeground)
-            .background(theme.color.tertiaryBackground)
+            .padding(context.dimen.paddingMedium)
+            .foregroundStyle(context.color.neutralForeground)
+            .background(context.color.neutralBackground)
             .bruteClipped()
             .bruteStroked()
-            .offset(configuration.isPressed ? theme.dimen.shadowOffset : .zero)
+            .offset(configuration.isPressed ? context.dimen.shadowOffset : .zero)
             .bruteShadow()
-            // TODO: Implement Animation for MacOS
-            // .animation(.easeIn(duration: 0.05), value: configuration.isPressed)
+            .animation(.easeIn(duration: 0.05), value: configuration.isPressed)
     }
 }
 
 #Preview {
-    VStack(spacing: 30) {
-        Button("Violet Button") { /* does nothing */ }
-            .buttonStyle(.bruteNeutral)
-            .bruteTheme(.violet)
-
-        Button("Blue Button") { /* does nothing */ }
-            .buttonStyle(.bruteNeutral)
-            .bruteTheme(.blue)
-
-        Button("Orange Button") { /* does nothing */ }
-            .buttonStyle(.bruteNeutral)
-            .bruteTheme(.orange)
-
-        Button("Green Button") { /* does nothing */ }
-            .buttonStyle(.bruteNeutral)
-            .bruteTheme(.green)
+    BruteStyle {
+        VStack(spacing: 30) {
+            Button("Violet Button") { /* does nothing */ }
+                .buttonStyle(.bruteNeutral)
+                .bruteTheme(.violet)
+            
+            Button("Blue Button") { /* does nothing */ }
+                .buttonStyle(.bruteNeutral)
+                .bruteTheme(.blue)
+            
+            Button("Orange Button") { /* does nothing */ }
+                .buttonStyle(.bruteNeutral)
+                .bruteTheme(.orange)
+            
+            Button("Green Button") { /* does nothing */ }
+                .buttonStyle(.bruteNeutral)
+                .bruteTheme(.green)
+        }
+        .padding()
     }
-    .padding()
 }

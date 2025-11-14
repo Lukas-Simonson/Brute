@@ -13,7 +13,7 @@ extension DisclosureGroupStyle where Self == BrutalistDisclosureGroupStyle {
 
 public struct BrutalistDisclosureGroupStyle: DisclosureGroupStyle {
 
-    @Environment(\.bruteTheme) private var theme
+    @Environment(\.bruteContext) private var context
 
     public func makeBody(configuration: Configuration) -> some View {
         VStack(spacing: 0) {
@@ -21,7 +21,6 @@ public struct BrutalistDisclosureGroupStyle: DisclosureGroupStyle {
             if configuration.isExpanded {
                 divider
                 content(with: configuration)
-                    .foregroundStyle(theme.color.foreground)
             }
         }
         .brutalized()
@@ -34,10 +33,10 @@ public struct BrutalistDisclosureGroupStyle: DisclosureGroupStyle {
             Image(systemName: config.isExpanded ? "chevron.up" : "chevron.down")
                 .contentTransition(.symbolEffect(.replace))
         }
-        .font(theme.font.header)
-        .foregroundStyle(theme.color.secondaryForeground)
-        .padding(theme.dimen.contentPadding)
-        .background(theme.color.secondaryBackground)
+        .font(context.font.header)
+        .foregroundStyle(context.color.accentForeground)
+        .padding(context.dimen.paddingMedium)
+        .background(context.color.accentBackground)
         .onTapGesture {
             withAnimation(.default) {
                 config.$isExpanded.wrappedValue = !config.isExpanded
@@ -48,74 +47,70 @@ public struct BrutalistDisclosureGroupStyle: DisclosureGroupStyle {
 
     private var divider: some View {
         Rectangle()
-            .fill(theme.color.border)
-            .frame(maxWidth: .infinity, maxHeight: theme.dimen.borderWidth)
+            .fill(context.color.border)
+            .frame(maxWidth: .infinity, maxHeight: context.dimen.borderWidth)
             .transition(.move(edge: .top))
     }
 
     private func content(with config: Configuration) -> some View {
         config.content
             .transition(.move(edge: .top))
-            .padding(theme.dimen.contentPadding)
+            .padding(context.dimen.paddingMedium)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(theme.color.background)
+            .background(context.color.background)
+            .foregroundStyle(context.color.foreground)
+            .bruteThemeLeveled(by: 1)
     }
 }
 
 #Preview {
+    BruteStyle {
+        ScrollView {
+            VStack(spacing: 30) {
+                BrutalistDisclosureGroupStylePreview(title: "Violet")
+                    .bruteTheme(.violet)
 
-    @Previewable @Environment(\.bruteColor) var color
+                BrutalistDisclosureGroupStylePreview(title: "Blue")
+                    .bruteTheme(.blue)
 
-    ScrollView {
-        VStack(spacing: 30) {
-            BrutalistDisclosureGroupStylePreview(title: "Violet")
-                .bruteTheme(.violet)
+                BrutalistDisclosureGroupStylePreview(title: "Orange")
+                    .bruteTheme(.orange)
 
-            BrutalistDisclosureGroupStylePreview(title: "Blue")
-                .bruteTheme(.blue)
+                BrutalistDisclosureGroupStylePreview(title: "Green")
+                    .bruteTheme(.green)
 
-            BrutalistDisclosureGroupStylePreview(title: "Orange")
-                .bruteTheme(.orange)
-
-            BrutalistDisclosureGroupStylePreview(title: "Green")
-                .bruteTheme(.green)
+                BrutalistDisclosureGroupStylePreview(title: "Green")
+                    .bruteTheme(.multi)
+            }
+            .padding()
         }
-        .padding()
     }
-    .background(color.background)
 }
 
 fileprivate struct BrutalistDisclosureGroupStylePreview: View {
 
-    @Environment(\.bruteColor) private var color
+    @Environment(\.bruteContext) private var context
 
     @State private var customExpanded = true
 
     let title: String
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(title)
-                .font(.title)
-                .foregroundStyle(color.foreground)
-
-            DisclosureGroup(
-                isExpanded: $customExpanded,
-                content: {
-                    Text("This uses a custom header.")
-                },
-                label: {
-                    Label("Custom Header ", systemImage: "globe")
+        DisclosureGroup(
+            isExpanded: $customExpanded,
+            content: {
+                DisclosureGroup("Title Header | Level 2") {
+                    DisclosureGroup("Title Header | Level 3") {
+                        Text("L\no\nn\ng\n\nB\no\nd\ny")
+                    }
+                    .disclosureGroupStyle(.brute)
                 }
-            )
-
-            DisclosureGroup("Title Header") {
-                Text("L\no\nn\ng\n\nB\no\nd\ny")
+                .disclosureGroupStyle(.brute)
+            },
+            label: {
+                Label("Custom Header | Level 1", systemImage: "globe")
             }
-        }
-        .padding()
-        .background(color.background)
+        )
         .disclosureGroupStyle(.brute)
-        .brutalized()
     }
 }

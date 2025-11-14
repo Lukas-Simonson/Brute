@@ -18,55 +18,47 @@ struct ThemePicker<Content: View>: View {
     ]
 
     @Binding var isExpanded: Bool
-    @State private var theme: BruteTheme = .default
+    @State private var theme: BruteTheme = .violet
     @Environment(\.colorScheme) var colorScheme
 
     let content: () -> Content
 
     var body: some View {
-        ScrollView {
-            VStack {
-                DisclosureGroup(
-                    isExpanded: $isExpanded,
-                    content: {
-                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 20)], spacing: 20) {
-                            ForEach(themes, id: \.0) { (name, theme) in
-                                Button(
-                                    action: {
-                                        withAnimation {
-                                            self.theme = theme
+        BruteStyle {
+            ScrollView {
+                VStack {
+                    DisclosureGroup(
+                        isExpanded: $isExpanded,
+                        content: {
+                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 20)], spacing: 20) {
+                                ForEach(themes, id: \.0) { (name, theme) in
+                                    Button(
+                                        action: {
+                                            withAnimation {
+                                                self.theme = theme
+                                            }
+                                        },
+                                        label: {
+                                            Text(name)
+                                                .frame(maxWidth: .infinity)
                                         }
-                                    },
-                                    label: {
-                                        Text(name)
-                                            .frame(maxWidth: .infinity)
-                                    }
-                                )
-                                .buttonStyle(.brute)
-                                .bruteTheme(theme)
+                                    )
+                                    .buttonStyle(.brute)
+                                    .bruteTheme(theme)
+                                }
                             }
+                        },
+                        label: {
+                            Label("Theme", systemImage: "pencil.and.outline")
+                                .labelStyle(.titleAndIcon)
                         }
-                    },
-                    label: {
-                        Label("Theme", systemImage: "pencil.and.outline")
-                            .labelStyle(.titleAndIcon)
-                    }
-                )
-
-                content()
+                    )
+                    
+                    content()
+                }
+                .padding()
             }
-            .padding()
         }
-        // Apply Default Styles
-        .disclosureGroupStyle(.brute)
-        .buttonStyle(.brute)
-        .gaugeStyle(.brute)
-        .labelStyle(.bruteBadge)
-        .progressViewStyle(.brute)
-        .textFieldStyle(.brute)
-        .toggleStyle(.bruteSwitch)
-
-        .background(theme.colorTheme.colors(for: colorScheme).background)
         .bruteTheme(theme)
     }
 }

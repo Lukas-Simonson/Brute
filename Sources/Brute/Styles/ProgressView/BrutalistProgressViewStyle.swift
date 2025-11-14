@@ -13,7 +13,7 @@ extension ProgressViewStyle where Self == BrutalistProgressViewStyle {
 
 public struct BrutalistProgressViewStyle: ProgressViewStyle {
 
-    @Environment(\.bruteTheme) var theme
+    @Environment(\.bruteContext) var context
 
     public func makeBody(configuration: Configuration) -> some View {
         VStack(alignment: .leading) {
@@ -21,18 +21,18 @@ public struct BrutalistProgressViewStyle: ProgressViewStyle {
 
             if let fractionCompleted = configuration.fractionCompleted {
                 // Determinate progress view
-                PercentFillShape(percent: fractionCompleted, cornerRadius: theme.dimen.cornerRadius)
-                    .fill(theme.color.secondaryBackground)
-                    .stroke(theme.color.border, lineWidth: theme.dimen.borderWidth)
-                    .frame(height: 20)
-                    .background(theme.color.tertiaryBackground)
+                PercentFillShape(percent: fractionCompleted, cornerRadius: context.dimen.cornerRadius)
+                    .fill(context.color.accentBackground)
+                    .stroke(context.color.border, lineWidth: context.dimen.borderWidth)
+                    .frame(height: context.dimen.paddingMedium)
+                    .background(context.color.background)
                     .bruteClipped()
                     .bruteStroked()
             } else {
                 // Indeterminate progress view
                 IndeterminateProgressView()
                     .frame(height: 20)
-                    .background(theme.color.tertiaryBackground)
+                    .background(context.color.background)
                     .bruteClipped()
                     .bruteStroked()
             }
@@ -42,7 +42,7 @@ public struct BrutalistProgressViewStyle: ProgressViewStyle {
 
 /// An indeterminate progress view with a Neo-Brutalist chunky animated pattern
 fileprivate struct IndeterminateProgressView: View {
-    @Environment(\.bruteTheme) var theme
+    @Environment(\.bruteContext) private var bruteContext
     @State private var animationOffset: CGFloat = 0
     
     var body: some View {
@@ -75,14 +75,14 @@ fileprivate struct IndeterminateProgressView: View {
                                 height: blockHeight
                             )
                             
-                            let cornerRadius = min(theme.dimen.cornerRadius, blockWidth / 2)
+                            let cornerRadius = min(bruteContext.dimen.cornerRadius, blockWidth / 2)
                             let path = Path(roundedRect: rect, cornerRadius: cornerRadius)
                             
-                            context.fill(path, with: .color(theme.color.secondaryBackground))
+                            context.fill(path, with: .color(bruteContext.color.accentBackground))
                             context.stroke(
                                 path,
-                                with: .color(theme.color.border),
-                                lineWidth: theme.dimen.borderWidth
+                                with: .color(bruteContext.color.border),
+                                lineWidth: bruteContext.dimen.borderWidth
                             )
                         }
                     }
@@ -93,42 +93,45 @@ fileprivate struct IndeterminateProgressView: View {
 }
 
 #Preview {
-    @Previewable @Environment(\.bruteTheme) var theme
+    BruteStyle {
+        ScrollView {
+            VStack(spacing: 20) {
+                BruteCard {
+                    ProgressView("Violet", value: 0.25)
+                    ProgressView("Loading Violet...")
+                }
+                .progressViewStyle(.brute)
+                .bruteTheme(.violet)
 
-    VStack {
-        ProgressView("Violet", value: 0.25)
-            .progressViewStyle(.brute)
-            .bruteTheme(.violet)
+                BruteCard {
+                    ProgressView("Blue", value: 0.50)
+                    ProgressView("Loading Blue...")
+                }
+                .progressViewStyle(.brute)
+                .bruteTheme(.blue)
 
-        ProgressView("Loading Violet...")
-            .progressViewStyle(.brute)
-            .bruteTheme(.violet)
+                BruteCard {
+                    ProgressView("Orange", value: 0.75)
+                    ProgressView("Loading Orange...")
+                }
+                .progressViewStyle(.brute)
+                .bruteTheme(.orange)
 
-        ProgressView("Blue", value: 0.5)
-            .progressViewStyle(.brute)
-            .bruteTheme(.blue)
+                BruteCard {
+                    ProgressView("Green", value: 0.25)
+                    ProgressView("Loading Green...")
+                }
+                .progressViewStyle(.brute)
+                .bruteTheme(.green)
 
-        ProgressView("Loading Blue...")
-            .progressViewStyle(.brute)
-            .bruteTheme(.blue)
-
-        ProgressView("Orange", value: 0.75)
-            .progressViewStyle(.brute)
-            .bruteTheme(.orange)
-
-        ProgressView("Loading Orange...")
-            .progressViewStyle(.brute)
-            .bruteTheme(.orange)
-
-        ProgressView("Green", value: 1)
-            .progressViewStyle(.brute)
-            .bruteTheme(.green)
-
-        ProgressView("Loading Green...")
-            .progressViewStyle(.brute)
-            .bruteTheme(.green)
+                BruteCard {
+                    ProgressView("Multi", value: 0.25)
+                    ProgressView("Loading Multi...")
+                }
+                .progressViewStyle(.brute)
+                .bruteTheme(.multi)
+            }
+            .padding()
+        }
     }
-    .padding()
-    .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .background(theme.color.background)
 }

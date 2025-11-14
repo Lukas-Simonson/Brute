@@ -13,22 +13,21 @@ extension ButtonStyle where Self == BrutalistReverseButtonStyle {
 
 public struct BrutalistReverseButtonStyle: ButtonStyle {
 
-    @Environment(\.bruteTheme) private var theme
+    @Environment(\.bruteContext) private var context
 
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .padding(theme.dimen.contentPadding)
-            .foregroundStyle(theme.color.secondaryForeground)
-            .background(theme.color.secondaryBackground)
+            .padding(context.dimen.paddingMedium)
+            .foregroundStyle(context.color.accentForeground)
+            .background(context.color.accentBackground)
             .bruteClipped()
             .bruteStroked()
             .background {
-                RoundedRectangle(cornerRadius: theme.dimen.cornerRadius)
-                    .fill(theme.color.border)
-                    .offset(configuration.isPressed ? theme.dimen.shadowOffset : .zero)
+                RoundedRectangle(cornerRadius: context.dimen.cornerRadius)
+                    .fill(context.color.border)
+                    .offset(configuration.isPressed ? context.dimen.shadowOffset : .zero)
             }
-            // TODO: Implement Animation for MacOS
-            // .animation(.easeIn(duration: 0.05), value: configuration.isPressed)
+            .animation(.easeIn(duration: 0.05), value: configuration.isPressed)
     }
 }
 

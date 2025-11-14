@@ -13,21 +13,21 @@ extension ToggleStyle where Self == BrutalistCheckboxToggleStyle {
 
 public struct BrutalistCheckboxToggleStyle: ToggleStyle {
 
-    @Environment(\.bruteTheme) private var theme
+    @Environment(\.bruteContext) private var context
 
     public func makeBody(configuration: Configuration) -> some View {
         HStack {
             Rectangle()
                 .fill(
-                    configuration.isOn ? theme.color.secondaryBackground : theme.color.tertiaryBackground
+                    configuration.isOn ? context.color.accentBackground : context.color.neutralBackground
                 )
-                .stroke(theme.color.border, lineWidth: theme.dimen.borderWidth)
+                .stroke(context.color.border, lineWidth: context.dimen.borderWidth)
                 .aspectRatio(1, contentMode: .fit)
                 .frame(maxHeight: 25)
                 .overlay {
                     if configuration.isOn {
                         Image(systemName: "checkmark")
-                            .foregroundStyle(theme.color.secondaryForeground)
+                            .foregroundStyle(context.color.accentForeground)
                     }
                 }
 
@@ -41,35 +41,31 @@ public struct BrutalistCheckboxToggleStyle: ToggleStyle {
 
 #Preview {
 
-    @Previewable @Environment(\.bruteTheme) var theme
     @Previewable @State var isOn = true
 
-    VStack(alignment: .leading) {
-        Toggle(isOn: $isOn) {
-            Text("Violet Checkbox")
-        }
-        .toggleStyle(.bruteCheckbox)
-        .bruteTheme(.violet)
+    BruteStyle {
+        VStack(alignment: .leading) {
+            Toggle(isOn: $isOn) {
+                Text("Violet Checkbox")
+            }
+            .bruteTheme(.violet)
 
-        Toggle(isOn: $isOn) {
-            Text("Blue Checkbox")
-        }
-        .toggleStyle(.bruteCheckbox)
-        .bruteTheme(.blue)
+            Toggle(isOn: $isOn) {
+                Text("Blue Checkbox")
+            }
+            .bruteTheme(.blue)
 
-        Toggle(isOn: $isOn) {
-            Text("Orange Checkbox")
-        }
-        .toggleStyle(.bruteCheckbox)
-        .bruteTheme(.orange)
+            Toggle(isOn: $isOn) {
+                Text("Orange Checkbox")
+            }
+            .bruteTheme(.orange)
 
-        Toggle(isOn: $isOn) {
-            Text("Green Checkbox")
+            Toggle(isOn: $isOn) {
+                Text("Green Checkbox")
+            }
+            .bruteTheme(.green)
         }
+        .padding()
         .toggleStyle(.bruteCheckbox)
-        .bruteTheme(.green)
     }
-    .padding()
-    .background(theme.color.background)
-    .brutalized()
 }

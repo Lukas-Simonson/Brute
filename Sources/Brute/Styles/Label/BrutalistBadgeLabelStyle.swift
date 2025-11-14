@@ -8,7 +8,9 @@
 import SwiftUI
 
 extension LabelStyle where Self == BrutalistBadgeLabelStyle {
-    public static var bruteBadge: Self { BrutalistBadgeLabelStyle(mode: .titleAndIcon) }
+    public static var bruteBadge: Self {
+        BrutalistBadgeLabelStyle(mode: .titleAndIcon)
+    }
     public static func bruteBadge(_ mode: BrutalistBadgeLabelStyle.Mode) -> Self {
         BrutalistBadgeLabelStyle(mode: mode)
     }
@@ -16,25 +18,25 @@ extension LabelStyle where Self == BrutalistBadgeLabelStyle {
 
 public struct BrutalistBadgeLabelStyle: LabelStyle {
 
-    @Environment(\.bruteTheme) private var theme
+    @Environment(\.bruteContext) private var context
     public let mode: Mode
 
     public func makeBody(configuration: Configuration) -> some View {
         HStack {
             switch mode {
-                case .titleAndIcon:
-                    configuration.icon
-                    configuration.title
-                case .titleOnly:
-                    configuration.title
-                case .iconOnly:
-                    configuration.icon
+            case .titleAndIcon:
+                configuration.icon
+                configuration.title
+            case .titleOnly:
+                configuration.title
+            case .iconOnly:
+                configuration.icon
             }
         }
-        .font(theme.font.caption)
-        .padding(theme.dimen.smallContentPadding)
-        .background(theme.color.secondaryBackground)
-        .foregroundStyle(theme.color.secondaryForeground)
+        .font(context.font.caption)
+        .padding(context.dimen.paddingSmall)
+        .background(context.color.accentBackground)
+        .foregroundStyle(context.color.accentForeground)
         .bruteClipped()
         .bruteStroked()
     }
@@ -48,48 +50,50 @@ public struct BrutalistBadgeLabelStyle: LabelStyle {
 
 private struct BrutalistBadgeLabelStylePreview: View {
 
-    @Environment(\.bruteTheme) private var theme
+    @Environment(\.bruteContext) private var context
 
     let title: String
 
     var body: some View {
-        VStack(alignment: .leading) {
+        BruteCard {
             Text(title)
-                .font(theme.font.header)
+                .font(context.font.title)
 
             HStack {
                 Label("Icon Only", systemImage: "leaf")
                     .labelStyle(.bruteBadge(.iconOnly))
-                
+
                 Label("Title Only", systemImage: "person")
                     .labelStyle(.bruteBadge(.titleOnly))
-                
+
                 Label("Title & Icon", systemImage: "globe")
                     .labelStyle(.bruteBadge)
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding(theme.dimen.contentPadding)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(theme.color.background)
-        .brutalized()
     }
 }
 
 #Preview {
-    ScrollView {
-        VStack(spacing: 30) {
-            BrutalistBadgeLabelStylePreview(title: "Violet")
-                .bruteTheme(.violet)
+    BruteStyle {
+        ScrollView {
+            VStack(spacing: 30) {
+                BrutalistBadgeLabelStylePreview(title: "Violet")
+                    .bruteTheme(.violet)
 
-            BrutalistBadgeLabelStylePreview(title: "Blue")
-                .bruteTheme(.blue)
+                BrutalistBadgeLabelStylePreview(title: "Blue")
+                    .bruteTheme(.blue)
 
-            BrutalistBadgeLabelStylePreview(title: "Orange")
-                .bruteTheme(.orange)
+                BrutalistBadgeLabelStylePreview(title: "Orange")
+                    .bruteTheme(.orange)
 
-            BrutalistBadgeLabelStylePreview(title: "Green")
-                .bruteTheme(.green)
+                BrutalistBadgeLabelStylePreview(title: "Green")
+                    .bruteTheme(.green)
+
+                BrutalistBadgeLabelStylePreview(title: "Multi")
+                    .bruteTheme(.multi)
+            }
+            .padding()
         }
-        .padding()
     }
 }
