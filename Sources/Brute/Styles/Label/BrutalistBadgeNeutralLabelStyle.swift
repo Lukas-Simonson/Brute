@@ -16,7 +16,7 @@ extension LabelStyle where Self == BrutalistBadgeNeutralLabelStyle {
 
 public struct BrutalistBadgeNeutralLabelStyle: LabelStyle {
 
-    @Environment(\.bruteTheme) private var theme
+    @Environment(\.bruteContext) private var context
     public let mode: BrutalistBadgeLabelStyle.Mode
 
     public func makeBody(configuration: Configuration) -> some View {
@@ -31,10 +31,10 @@ public struct BrutalistBadgeNeutralLabelStyle: LabelStyle {
                     configuration.icon
             }
         }
-        .font(theme.font.caption)
-        .padding(theme.dimen.smallContentPadding)
-        .background(theme.color.tertiaryBackground)
-        .foregroundStyle(theme.color.tertiaryForeground)
+        .font(context.font.caption)
+        .padding(context.dimen.paddingSmall)
+        .background(context.color.neutralBackground)
+        .foregroundStyle(context.color.neutralForeground)
         .bruteClipped()
         .bruteStroked()
     }
@@ -42,28 +42,27 @@ public struct BrutalistBadgeNeutralLabelStyle: LabelStyle {
 
 private struct BrutalistBadgeLabelStylePreview: View {
 
-    @Environment(\.bruteTheme) private var theme
+    @Environment(\.bruteContext) private var context
 
     let title: String
 
     var body: some View {
-        VStack(alignment: .leading) {
+        BruteCard {
             Text(title)
-                .font(theme.font.header)
+                .font(context.font.title)
 
-            Label("Icon Only", systemImage: "leaf")
-                .labelStyle(.bruteBadgeNeutral(.iconOnly))
+            HStack {
+                Label("Icon Only", systemImage: "leaf")
+                    .labelStyle(.bruteBadgeNeutral(.iconOnly))
 
-            Label("Title Only", systemImage: "person")
-                .labelStyle(.bruteBadgeNeutral(.titleOnly))
+                Label("Title Only", systemImage: "person")
+                    .labelStyle(.bruteBadgeNeutral(.titleOnly))
 
-            Label("Title & Icon", systemImage: "globe")
-                .labelStyle(.bruteBadgeNeutral)
+                Label("Title & Icon", systemImage: "globe")
+                    .labelStyle(.bruteBadgeNeutral)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding(theme.dimen.contentPadding)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(theme.color.background)
-        .brutalized()
     }
 }
 
@@ -71,16 +70,19 @@ private struct BrutalistBadgeLabelStylePreview: View {
     ScrollView {
         VStack(spacing: 30) {
             BrutalistBadgeLabelStylePreview(title: "Violet")
-                .bruteTheme(.violet)
+                .withLeveledBruteTheme(.violet)
 
             BrutalistBadgeLabelStylePreview(title: "Blue")
-                .bruteTheme(.blue)
+                .withLeveledBruteTheme(.blue)
 
             BrutalistBadgeLabelStylePreview(title: "Orange")
-                .bruteTheme(.orange)
+                .withLeveledBruteTheme(.orange)
 
             BrutalistBadgeLabelStylePreview(title: "Green")
-                .bruteTheme(.green)
+                .withLeveledBruteTheme(.green)
+
+            BrutalistBadgeLabelStylePreview(title: "Multi")
+                .withLeveledBruteTheme(.multi)
         }
         .padding()
     }

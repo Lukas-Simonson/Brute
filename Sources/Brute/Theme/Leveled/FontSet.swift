@@ -12,6 +12,7 @@ extension LeveledBruteTheme {
         public let title: Font
         public let header: Font
         public let body: Font
+        public let caption: Font
     }
 }
 
@@ -22,6 +23,7 @@ extension LeveledBruteTheme.FontSet {
             title: Font.system(.title, design: .rounded, weight: .bold),
             header: Font.system(.headline, design: .rounded, weight: .bold),
             body: Font.system(.body, design: .rounded, weight: .regular),
+            caption: Font.system(.caption, design: .monospaced, weight: .bold)
         )
     }
 }
