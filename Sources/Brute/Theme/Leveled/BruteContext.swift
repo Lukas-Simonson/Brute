@@ -34,6 +34,10 @@ extension View {
         self.modifier(ThemeLeveledViewModifier(change: change))
     }
 
+    func withLeveledBruteTheme(_ theme: LeveledBruteTheme) -> some View {
+        self.environment(\.leveledBruteTheme, theme)
+    }
+
     func overrideBruteColor(_ set: LeveledBruteTheme.ColorSet?) -> some View {
         self.environment(\.bruteColorSetOverride, set)
     }

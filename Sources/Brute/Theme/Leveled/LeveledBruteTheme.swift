@@ -60,4 +60,36 @@ extension LeveledBruteTheme {
             fonts: [.violet]
         )
     }
+
+    public static var blue: LeveledBruteTheme {
+        LeveledBruteTheme(
+            colors: [.blueZero, .blueOne, .blueTwo],
+            dimensions: [.violet],
+            fonts: [.violet]
+        )
+    }
+
+    public static var orange: LeveledBruteTheme {
+        LeveledBruteTheme(
+            colors: [.orangeZero, .orangeOne, .orangeTwo],
+            dimensions: [.violet],
+            fonts: [.violet]
+        )
+    }
+
+    public static var green: LeveledBruteTheme {
+        LeveledBruteTheme(
+            colors: [.greenZero, .greenOne, .greenTwo],
+            dimensions: [.violet],
+            fonts: [.violet]
+        )
+    }
+
+    public static var multi: LeveledBruteTheme {
+        LeveledBruteTheme(
+            colors: [.multicolorZero, .multicolorOne, .multicolorTwo],
+            dimensions: [.violet],
+            fonts: [.violet]
+        )
+    }
 }

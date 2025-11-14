@@ -64,26 +64,27 @@ public struct BrutalistDisclosureGroupStyle: DisclosureGroupStyle {
 }
 
 #Preview {
+    BruteStyle {
+        ScrollView {
+            VStack(spacing: 30) {
+                BrutalistDisclosureGroupStylePreview(title: "Violet")
+                    .withLeveledBruteTheme(.violet)
 
-    @Previewable @Environment(\.bruteColor) var color
+                BrutalistDisclosureGroupStylePreview(title: "Blue")
+                    .withLeveledBruteTheme(.blue)
 
-    ScrollView {
-        VStack(spacing: 30) {
-            BrutalistDisclosureGroupStylePreview(title: "Violet")
-                .bruteTheme(.violet)
+                BrutalistDisclosureGroupStylePreview(title: "Orange")
+                    .withLeveledBruteTheme(.orange)
 
-            BrutalistDisclosureGroupStylePreview(title: "Blue")
-                .bruteTheme(.blue)
+                BrutalistDisclosureGroupStylePreview(title: "Green")
+                    .withLeveledBruteTheme(.green)
 
-            BrutalistDisclosureGroupStylePreview(title: "Orange")
-                .bruteTheme(.orange)
-
-            BrutalistDisclosureGroupStylePreview(title: "Green")
-                .bruteTheme(.green)
+                BrutalistDisclosureGroupStylePreview(title: "Green")
+                    .withLeveledBruteTheme(.multi)
+            }
+            .padding()
         }
-        .padding()
     }
-    .background(Color.primary.colorInvert())
 }
 
 fileprivate struct BrutalistDisclosureGroupStylePreview: View {
@@ -111,29 +112,5 @@ fileprivate struct BrutalistDisclosureGroupStylePreview: View {
             }
         )
         .disclosureGroupStyle(.brute)
-//        VStack {
-//            BruteCard {
-//                Text(title)
-//                    .font(context.font.title)
-//
-//                DisclosureGroup(
-//                    isExpanded: $customExpanded,
-//                    content: {
-//                        DisclosureGroup("Title Header") {
-//                            Text("L\no\nn\ng\n\nB\no\nd\ny")
-//                        }
-//                        .disclosureGroupStyle(.brute)
-//                    },
-//                    label: {
-//                        Label("Custom Header ", systemImage: "globe")
-//                    }
-//                )
-//            }
-//
-//            DisclosureGroup("Title Header") {
-//                Text("L\no\nn\ng\n\nB\no\nd\ny")
-//            }
-//        }
-//        .disclosureGroupStyle(.brute)
     }
 }
