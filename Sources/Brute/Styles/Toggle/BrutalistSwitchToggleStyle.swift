@@ -13,21 +13,21 @@ extension ToggleStyle where Self == BrutalistSwitchToggleStyle {
 
 public struct BrutalistSwitchToggleStyle: ToggleStyle {
 
-    @Environment(\.bruteTheme) private var theme
+    @Environment(\.bruteContext) private var context
 
     public func makeBody(configuration: Configuration) -> some View {
         HStack {
             Capsule()
                 .fill(
-                    configuration.isOn ? theme.color.secondaryBackground : theme.color.tertiaryBackground
+                    configuration.isOn ? context.color.accentBackground : context.color.neutralBackground
                 )
-                .stroke(theme.color.border, lineWidth: theme.dimen.borderWidth)
+                .stroke(context.color.border, lineWidth: context.dimen.borderWidth)
                 .aspectRatio(2/1, contentMode: .fit)
                 .frame(maxHeight: 25)
                 .overlay(alignment: configuration.isOn ? .trailing : .leading) {
                     Circle()
-                        .fill(theme.color.tertiaryForeground)
-                        .stroke(theme.color.border, lineWidth: theme.dimen.borderWidth)
+                        .fill(context.color.neutralForeground)
+                        .stroke(context.color.border, lineWidth: context.dimen.borderWidth)
                         .padding(.vertical, 4)
                         .padding(.horizontal, 5)
                 }
@@ -43,35 +43,31 @@ public struct BrutalistSwitchToggleStyle: ToggleStyle {
 
 #Preview {
 
-    @Previewable @Environment(\.bruteTheme) var theme
     @Previewable @State var isOn = true
 
-    VStack(alignment: .leading) {
-        Toggle(isOn: $isOn) {
-            Text("Violet Switch Toggle")
-        }
-        .toggleStyle(.bruteSwitch)
-        .bruteTheme(.violet)
+    BruteStyle {
+        VStack(alignment: .leading) {
+            Toggle(isOn: $isOn) {
+                Text("Violet Switch Toggle")
+            }
+            .withLeveledBruteTheme(.violet)
 
-        Toggle(isOn: $isOn) {
-            Text("Blue Switch Toggle")
-        }
-        .toggleStyle(.bruteSwitch)
-        .bruteTheme(.blue)
+            Toggle(isOn: $isOn) {
+                Text("Blue Switch Toggle")
+            }
+            .withLeveledBruteTheme(.blue)
 
-        Toggle(isOn: $isOn) {
-            Text("Orange Switch Toggle")
-        }
-        .toggleStyle(.bruteSwitch)
-        .bruteTheme(.orange)
+            Toggle(isOn: $isOn) {
+                Text("Orange Switch Toggle")
+            }
+            .withLeveledBruteTheme(.orange)
 
-        Toggle(isOn: $isOn) {
-            Text("Green Switch Toggle")
+            Toggle(isOn: $isOn) {
+                Text("Green Switch Toggle")
+            }
+            .withLeveledBruteTheme(.green)
         }
+        .padding()
         .toggleStyle(.bruteSwitch)
-        .bruteTheme(.green)
     }
-    .padding()
-    .background(theme.color.background)
-    .brutalized()
 }
