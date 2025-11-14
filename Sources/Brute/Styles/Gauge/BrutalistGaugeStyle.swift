@@ -58,7 +58,7 @@ public struct BrutalistGaugeStyle: GaugeStyle {
                 Text("Violet")
             }
             .gaugeStyle(.brute)
-            .withLeveledBruteTheme(.violet)
+            .bruteTheme(.violet)
             // .bruteTheme(.violet)
 
             Gauge(
@@ -77,14 +77,14 @@ public struct BrutalistGaugeStyle: GaugeStyle {
                 }
             )
             .gaugeStyle(.brute)
-            .withLeveledBruteTheme(.blue)
+            .bruteTheme(.blue)
             // .bruteTheme(.blue)
 
             Gauge(value: 0.5) {
                 Text("Orange")
             }
             .gaugeStyle(.brute)
-            .withLeveledBruteTheme(.orange)
+            .bruteTheme(.orange)
 
             Gauge(
                 value: 0.75,
@@ -102,12 +102,12 @@ public struct BrutalistGaugeStyle: GaugeStyle {
                 }
             )
             .gaugeStyle(.brute)
-            .withLeveledBruteTheme(.green)
+            .bruteTheme(.green)
 
             Gauge(value: 0.66) {
                 Text("Multi")
             }
-            .withLeveledBruteTheme(.multi)
+            .bruteTheme(.multi)
         }
         .padding()
     }

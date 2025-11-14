@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension LeveledBruteTheme {
+extension BruteTheme {
     public struct FontSet {
         public let title: Font
         public let header: Font
@@ -17,9 +17,9 @@ extension LeveledBruteTheme {
 }
 
 // MARK: - Violet
-extension LeveledBruteTheme.FontSet {
-    public static var violet: LeveledBruteTheme.FontSet {
-        LeveledBruteTheme.FontSet(
+extension BruteTheme.FontSet {
+    public static var violet: BruteTheme.FontSet {
+        BruteTheme.FontSet(
             title: Font.system(.title, design: .rounded, weight: .bold),
             header: Font.system(.headline, design: .rounded, weight: .bold),
             body: Font.system(.body, design: .rounded, weight: .regular),

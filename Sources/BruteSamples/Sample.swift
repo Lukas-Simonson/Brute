@@ -33,7 +33,7 @@ struct Sample: View {
     }
 
     struct Groups {
-        static let `default` = true
+        static let `default` = false
 
         var theme = Self.default
 
@@ -160,6 +160,7 @@ extension Sample {
                 TextField("Name:", text: $textInput)
                 TextField("Email:", text: $textInput)
             }
+            .textFieldStyle(.brute)
         }
     }
 }

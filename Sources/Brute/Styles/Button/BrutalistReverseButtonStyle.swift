@@ -35,19 +35,19 @@ public struct BrutalistReverseButtonStyle: ButtonStyle {
     VStack(spacing: 30) {
         Button("Violet Button") { /* does nothing */ }
             .buttonStyle(.bruteReverse)
-            .withLeveledBruteTheme(.violet)
+            .bruteTheme(.violet)
 
         Button("Blue Button") { /* does nothing */ }
             .buttonStyle(.bruteReverse)
-            .withLeveledBruteTheme(.blue)
+            .bruteTheme(.blue)
 
         Button("Orange Button") { /* does nothing */ }
             .buttonStyle(.bruteReverse)
-            .withLeveledBruteTheme(.orange)
+            .bruteTheme(.orange)
 
         Button("Green Button") { /* does nothing */ }
             .buttonStyle(.bruteReverse)
-            .withLeveledBruteTheme(.green)
+            .bruteTheme(.green)
     }
     .padding()
 }

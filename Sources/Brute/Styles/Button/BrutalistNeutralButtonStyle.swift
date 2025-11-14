@@ -33,19 +33,19 @@ public struct BrutalistNeutralButtonStyle: ButtonStyle {
         VStack(spacing: 30) {
             Button("Violet Button") { /* does nothing */ }
                 .buttonStyle(.bruteNeutral)
-                .withLeveledBruteTheme(.violet)
+                .bruteTheme(.violet)
             
             Button("Blue Button") { /* does nothing */ }
                 .buttonStyle(.bruteNeutral)
-                .withLeveledBruteTheme(.blue)
+                .bruteTheme(.blue)
             
             Button("Orange Button") { /* does nothing */ }
                 .buttonStyle(.bruteNeutral)
-                .withLeveledBruteTheme(.orange)
+                .bruteTheme(.orange)
             
             Button("Green Button") { /* does nothing */ }
                 .buttonStyle(.bruteNeutral)
-                .withLeveledBruteTheme(.green)
+                .bruteTheme(.green)
         }
         .padding()
     }

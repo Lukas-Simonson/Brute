@@ -52,25 +52,25 @@ public struct SegmentedBrutePickerStyle: BrutePickerStyle {
                 ForEach(tabs, id: \.self) { value in
                     Text(value)
                 }
-            }.withLeveledBruteTheme(.violet)
+            }.bruteTheme(.violet)
 
             BrutePicker(selection: $selection) {
                 ForEach(tabs, id: \.self) { value in
                     Text(value)
                 }
-            }.withLeveledBruteTheme(.blue)
+            }.bruteTheme(.blue)
 
             BrutePicker(selection: $selection) {
                 ForEach(tabs, id: \.self) { value in
                     Text(value)
                 }
-            }.withLeveledBruteTheme(.orange)
+            }.bruteTheme(.orange)
 
             BrutePicker(selection: $selection) {
                 ForEach(tabs, id: \.self) { value in
                     Text(value)
                 }
-            }.withLeveledBruteTheme(.green)
+            }.bruteTheme(.green)
         }
         .brutePickerStyle(.segmented)
         .padding()

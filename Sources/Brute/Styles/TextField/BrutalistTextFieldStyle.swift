@@ -44,16 +44,16 @@ public struct BrutalistTextFieldStyle: TextFieldStyle {
     BruteStyle {
         VStack {
             TextField("Violet", text: $text)
-                .withLeveledBruteTheme(.violet)
+                .bruteTheme(.violet)
 
             TextField("Blue", text: $text)
-                .withLeveledBruteTheme(.blue)
+                .bruteTheme(.blue)
 
             TextField("Orange", text: $text)
-                .withLeveledBruteTheme(.orange)
+                .bruteTheme(.orange)
 
             TextField("Green", text: $text)
-                .withLeveledBruteTheme(.green)
+                .bruteTheme(.green)
         }
         .padding()
         .textFieldStyle(.brute)

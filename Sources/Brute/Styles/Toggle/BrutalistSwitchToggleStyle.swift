@@ -50,22 +50,22 @@ public struct BrutalistSwitchToggleStyle: ToggleStyle {
             Toggle(isOn: $isOn) {
                 Text("Violet Switch Toggle")
             }
-            .withLeveledBruteTheme(.violet)
+            .bruteTheme(.violet)
 
             Toggle(isOn: $isOn) {
                 Text("Blue Switch Toggle")
             }
-            .withLeveledBruteTheme(.blue)
+            .bruteTheme(.blue)
 
             Toggle(isOn: $isOn) {
                 Text("Orange Switch Toggle")
             }
-            .withLeveledBruteTheme(.orange)
+            .bruteTheme(.orange)
 
             Toggle(isOn: $isOn) {
                 Text("Green Switch Toggle")
             }
-            .withLeveledBruteTheme(.green)
+            .bruteTheme(.green)
         }
         .padding()
         .toggleStyle(.bruteSwitch)

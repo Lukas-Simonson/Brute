@@ -101,35 +101,35 @@ fileprivate struct IndeterminateProgressView: View {
                     ProgressView("Loading Violet...")
                 }
                 .progressViewStyle(.brute)
-                .withLeveledBruteTheme(.violet)
+                .bruteTheme(.violet)
 
                 BruteCard {
                     ProgressView("Blue", value: 0.50)
                     ProgressView("Loading Blue...")
                 }
                 .progressViewStyle(.brute)
-                .withLeveledBruteTheme(.blue)
+                .bruteTheme(.blue)
 
                 BruteCard {
                     ProgressView("Orange", value: 0.75)
                     ProgressView("Loading Orange...")
                 }
                 .progressViewStyle(.brute)
-                .withLeveledBruteTheme(.orange)
+                .bruteTheme(.orange)
 
                 BruteCard {
                     ProgressView("Green", value: 0.25)
                     ProgressView("Loading Green...")
                 }
                 .progressViewStyle(.brute)
-                .withLeveledBruteTheme(.green)
+                .bruteTheme(.green)
 
                 BruteCard {
                     ProgressView("Multi", value: 0.25)
                     ProgressView("Loading Multi...")
                 }
                 .progressViewStyle(.brute)
-                .withLeveledBruteTheme(.multi)
+                .bruteTheme(.multi)
             }
             .padding()
         }

@@ -68,19 +68,19 @@ public struct BrutalistDisclosureGroupStyle: DisclosureGroupStyle {
         ScrollView {
             VStack(spacing: 30) {
                 BrutalistDisclosureGroupStylePreview(title: "Violet")
-                    .withLeveledBruteTheme(.violet)
+                    .bruteTheme(.violet)
 
                 BrutalistDisclosureGroupStylePreview(title: "Blue")
-                    .withLeveledBruteTheme(.blue)
+                    .bruteTheme(.blue)
 
                 BrutalistDisclosureGroupStylePreview(title: "Orange")
-                    .withLeveledBruteTheme(.orange)
+                    .bruteTheme(.orange)
 
                 BrutalistDisclosureGroupStylePreview(title: "Green")
-                    .withLeveledBruteTheme(.green)
+                    .bruteTheme(.green)
 
                 BrutalistDisclosureGroupStylePreview(title: "Green")
-                    .withLeveledBruteTheme(.multi)
+                    .bruteTheme(.multi)
             }
             .padding()
         }

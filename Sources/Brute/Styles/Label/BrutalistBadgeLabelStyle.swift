@@ -79,19 +79,19 @@ private struct BrutalistBadgeLabelStylePreview: View {
         ScrollView {
             VStack(spacing: 30) {
                 BrutalistBadgeLabelStylePreview(title: "Violet")
-                    .withLeveledBruteTheme(.violet)
+                    .bruteTheme(.violet)
 
                 BrutalistBadgeLabelStylePreview(title: "Blue")
-                    .withLeveledBruteTheme(.blue)
+                    .bruteTheme(.blue)
 
                 BrutalistBadgeLabelStylePreview(title: "Orange")
-                    .withLeveledBruteTheme(.orange)
+                    .bruteTheme(.orange)
 
                 BrutalistBadgeLabelStylePreview(title: "Green")
-                    .withLeveledBruteTheme(.green)
+                    .bruteTheme(.green)
 
                 BrutalistBadgeLabelStylePreview(title: "Multi")
-                    .withLeveledBruteTheme(.multi)
+                    .bruteTheme(.multi)
             }
             .padding()
         }

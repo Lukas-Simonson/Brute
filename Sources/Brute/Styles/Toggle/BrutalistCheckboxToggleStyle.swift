@@ -48,22 +48,22 @@ public struct BrutalistCheckboxToggleStyle: ToggleStyle {
             Toggle(isOn: $isOn) {
                 Text("Violet Checkbox")
             }
-            .withLeveledBruteTheme(.violet)
+            .bruteTheme(.violet)
 
             Toggle(isOn: $isOn) {
                 Text("Blue Checkbox")
             }
-            .withLeveledBruteTheme(.blue)
+            .bruteTheme(.blue)
 
             Toggle(isOn: $isOn) {
                 Text("Orange Checkbox")
             }
-            .withLeveledBruteTheme(.orange)
+            .bruteTheme(.orange)
 
             Toggle(isOn: $isOn) {
                 Text("Green Checkbox")
             }
-            .withLeveledBruteTheme(.green)
+            .bruteTheme(.green)
         }
         .padding()
         .toggleStyle(.bruteCheckbox)

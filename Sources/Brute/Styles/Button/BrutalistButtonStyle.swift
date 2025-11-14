@@ -32,16 +32,16 @@ public struct BrutalistButtonStyle: ButtonStyle {
     BruteStyle {
         VStack(spacing: 30) {
             Button("Violet Button") { /* does nothing */ }
-                .withLeveledBruteTheme(.violet)
+                .bruteTheme(.violet)
 
             Button("Blue Button") { /* does nothing */ }
-                .withLeveledBruteTheme(.blue)
+                .bruteTheme(.blue)
 
             Button("Orange Button") { /* does nothing */ }
-                .withLeveledBruteTheme(.orange)
+                .bruteTheme(.orange)
 
             Button("Green Button") { /* does nothing */ }
-                .withLeveledBruteTheme(.green)
+                .bruteTheme(.green)
         }
         .buttonStyle(.brute)
     }
