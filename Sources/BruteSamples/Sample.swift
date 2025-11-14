@@ -33,7 +33,7 @@ struct Sample: View {
     }
 
     struct Groups {
-        static let `default` = false
+        static let `default` = true
 
         var theme = Self.default
 
@@ -86,6 +86,7 @@ extension Sample {
                 Text("Badge:")
 
                 Label("Both", systemImage: "photo.artframe")
+                    .labelStyle(.bruteBadge)
 
                 Label("Title Only", systemImage: "photo.artframe")
                     .labelStyle(.bruteBadge(.titleOnly))

@@ -24,6 +24,7 @@ public struct BrutalistGaugeStyle: GaugeStyle {
 
             if let label = configuration.currentValueLabel {
                 label
+                    .foregroundStyle(context.color.accentForeground)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(context.dimen.paddingSmall)
                     .background(progressView(value: configuration.value))

@@ -56,7 +56,7 @@ extension BruteTheme.ColorSet {
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 169, g: 133, b: 255),
             neutralForeground: Color(r: 255, g: 255, b: 255),
-            neutralBackground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
             border: Color(r: 0, g: 0, b: 0),
         )
     }
@@ -81,7 +81,7 @@ extension BruteTheme.ColorSet {
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 206, g: 183, b: 255),
             neutralForeground: Color(r: 255, g: 255, b: 255),
-            neutralBackground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -106,7 +106,7 @@ extension BruteTheme.ColorSet {
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 188, g: 158, b: 255),
             neutralForeground: Color(r: 255, g: 255, b: 255),
-            neutralBackground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -164,7 +164,7 @@ extension BruteTheme.ColorSet {
             accentForeground: Color(r: 229, g: 229, b: 229),
             accentBackground: Color(r: 125, g: 211, b: 252),
             neutralForeground: Color(r: 255, g: 255, b: 255),
-            neutralBackground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
             border: Color(r: 0, g: 0, b: 0),
         )
     }
@@ -189,7 +189,7 @@ extension BruteTheme.ColorSet {
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 186, g: 230, b: 253),
             neutralForeground: Color(r: 255, g: 255, b: 255),
-            neutralBackground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -214,7 +214,7 @@ extension BruteTheme.ColorSet {
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 147, g: 197, b: 253),
             neutralForeground: Color(r: 255, g: 255, b: 255),
-            neutralBackground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -271,7 +271,7 @@ extension BruteTheme.ColorSet {
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 251, g: 176, b: 59),
             neutralForeground: Color(r: 255, g: 255, b: 255),
-            neutralBackground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
             border: Color(r: 0, g: 0, b: 0),
         )
     }
@@ -296,7 +296,7 @@ extension BruteTheme.ColorSet {
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 253, g: 203, b: 110),
             neutralForeground: Color(r: 255, g: 255, b: 255),
-            neutralBackground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -321,7 +321,7 @@ extension BruteTheme.ColorSet {
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 252, g: 186, b: 3),
             neutralForeground: Color(r: 255, g: 255, b: 255),
-            neutralBackground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -378,7 +378,7 @@ extension BruteTheme.ColorSet {
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 74, g: 222, b: 128),
             neutralForeground: Color(r: 255, g: 255, b: 255),
-            neutralBackground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
             border: Color(r: 0, g: 0, b: 0),
         )
     }
@@ -403,7 +403,7 @@ extension BruteTheme.ColorSet {
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 134, g: 239, b: 172),
             neutralForeground: Color(r: 255, g: 255, b: 255),
-            neutralBackground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -428,7 +428,7 @@ extension BruteTheme.ColorSet {
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 74, g: 222, b: 128),
             neutralForeground: Color(r: 255, g: 255, b: 255),
-            neutralBackground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -485,7 +485,7 @@ extension BruteTheme.ColorSet {
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 251, g: 176, b: 59),
             neutralForeground: Color(r: 255, g: 255, b: 255),
-            neutralBackground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
             border: Color(r: 0, g: 0, b: 0),
         )
     }
@@ -510,7 +510,7 @@ extension BruteTheme.ColorSet {
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 169, g: 133, b: 255),
             neutralForeground: Color(r: 255, g: 255, b: 255),
-            neutralBackground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -535,7 +535,7 @@ extension BruteTheme.ColorSet {
             accentForeground: Color(r: 229, g: 229, b: 229),
             accentBackground: Color(r: 125, g: 211, b: 252),
             neutralForeground: Color(r: 255, g: 255, b: 255),
-            neutralBackground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
             border: Color(r: 0, g: 0, b: 0)
         )
     }

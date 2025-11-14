@@ -33,6 +33,7 @@ public struct SegmentedBrutePickerStyle: BrutePickerStyle {
         return config.label
             .frame(maxWidth: .infinity)
             .padding(context.dimen.paddingSmall)
+            .foregroundStyle(config.isSelected ? context.color.accentForeground : context.color.foreground)
             .background {
                 RoundedRectangle(cornerRadius: context.dimen.cornerRadius)
                     .fill(config.isSelected ? context.color.accentBackground : context.color.background)
