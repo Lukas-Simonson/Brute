@@ -24,9 +24,9 @@ extension EnvironmentValues {
 }
 
 public struct BruteContext {
-    let color: BruteTheme.ColorSet
-    let dimen: BruteTheme.DimensionSet
-    let font: BruteTheme.FontSet
+    public let color: BruteTheme.ColorSet
+    public let dimen: BruteTheme.DimensionSet
+    public let font: BruteTheme.FontSet
 }
 
 extension View {
