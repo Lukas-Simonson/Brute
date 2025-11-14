@@ -13,14 +13,14 @@ extension ButtonStyle where Self == BrutalistBasicButtonStyle {
 
 public struct BrutalistBasicButtonStyle: ButtonStyle {
 
-    @Environment(\.bruteTheme) private var theme
+    @Environment(\.bruteContext) private var context
 
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .foregroundStyle(theme.color.secondaryForeground)
-            .padding(theme.dimen.contentPadding)
+            .foregroundStyle(context.color.accentForeground)
+            .padding(context.dimen.paddingMedium)
             .background(
-                theme.color.secondaryBackground
+                context.color.accentBackground
                     .opacity(configuration.isPressed ? 0.75 : 1)
             )
             .bruteClipped()
@@ -29,23 +29,20 @@ public struct BrutalistBasicButtonStyle: ButtonStyle {
 }
 
 #Preview {
-    VStack(spacing: 30) {
-        Button("Violet Button") { /* does nothing */ }
-            .buttonStyle(.bruteBasic)
-            .bruteTheme(.violet)
+    BruteStyle {
+        VStack(spacing: 30) {
+            Button("Violet Button") { /* does nothing */ }
+                .withLeveledBruteTheme(.violet)
 
-        Button("Blue Button") { /* does nothing */ }
-            .buttonStyle(.bruteBasic)
-            .bruteTheme(.blue)
+            Button("Blue Button") { /* does nothing */ }
+                .withLeveledBruteTheme(.blue)
 
-        Button("Orange Button") { /* does nothing */ }
-            .buttonStyle(.bruteBasic)
-            .bruteTheme(.orange)
+            Button("Orange Button") { /* does nothing */ }
+                .withLeveledBruteTheme(.orange)
 
-        Button("Green Button") { /* does nothing */ }
-            .buttonStyle(.bruteBasic)
-            .bruteTheme(.green)
+            Button("Green Button") { /* does nothing */ }
+                .withLeveledBruteTheme(.green)
+        }
+        .buttonStyle(.bruteBasic)
     }
-    .padding()
-    .background(Color.gray)
 }

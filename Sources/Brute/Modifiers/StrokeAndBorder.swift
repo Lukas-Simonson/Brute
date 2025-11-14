@@ -27,34 +27,43 @@ extension View {
 
 fileprivate struct BruteClip: ViewModifier {
 
-    @Environment(\.bruteDimen) private var dimen
+    @Environment(\.bruteContext) private var context
+
+    // Not sure why this is randomly needed
+    nonisolated init() { }
 
     func body(content: Content) -> some View {
         content.clipShape(
-            RoundedRectangle(cornerRadius: dimen.cornerRadius)
+            RoundedRectangle(cornerRadius: context.dimen.cornerRadius)
         )
     }
 }
 
 fileprivate struct BruteStroke: ViewModifier {
-    @Environment(\.bruteTheme) private var theme
+    @Environment(\.bruteContext) private var context
+
+    // Not sure why this is randomly needed
+    nonisolated init() { }
 
     func body(content: Content) -> some View {
         content.overlay {
-            RoundedRectangle(cornerRadius: theme.dimen.cornerRadius)
-                .stroke(theme.color.border, lineWidth: theme.dimen.borderWidth)
+            RoundedRectangle(cornerRadius: context.dimen.cornerRadius)
+                .stroke(context.color.border, lineWidth: context.dimen.borderWidth)
         }
     }
 }
 
 fileprivate struct BruteShadow: ViewModifier {
-    @Environment(\.bruteTheme) private var theme
+    @Environment(\.bruteContext) private var context
+
+    // Not sure why this is randomly needed
+    nonisolated init() { }
 
     func body(content: Content) -> some View {
         content.background {
-            RoundedRectangle(cornerRadius: theme.dimen.cornerRadius)
-                .fill(theme.color.border)
-                .offset(theme.dimen.shadowOffset)
+            RoundedRectangle(cornerRadius: context.dimen.cornerRadius)
+                .fill(context.color.border)
+                .offset(context.dimen.shadowOffset)
         }
     }
 }

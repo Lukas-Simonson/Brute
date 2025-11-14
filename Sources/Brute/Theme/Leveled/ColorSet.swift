@@ -15,6 +15,9 @@ extension LeveledBruteTheme {
         public let accentForeground: Color
         public let accentBackground: Color
 
+        public let neutralForeground: Color
+        public let neutralBackground: Color
+
         public let border: Color
     }
 
@@ -40,6 +43,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 238, g: 230, b: 254),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 170, g: 133, b: 255),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
             border: Color(r: 0, g: 0, b: 0),
         )
     }
@@ -50,6 +55,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 51, g: 35, b: 82),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 169, g: 133, b: 255),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 0, g: 0, b: 0),
             border: Color(r: 0, g: 0, b: 0),
         )
     }
@@ -61,6 +68,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 255, g: 255, b: 255),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 206, g: 183, b: 255),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -71,6 +80,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 31, g: 31, b: 31),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 206, g: 183, b: 255),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 0, g: 0, b: 0),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -82,6 +93,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 248, g: 245, b: 255),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 188, g: 158, b: 255),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -92,6 +105,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 41, g: 28, b: 66),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 188, g: 158, b: 255),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 0, g: 0, b: 0),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -136,6 +151,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 224, g: 242, b: 254),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 125, g: 211, b: 252),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
             border: Color(r: 0, g: 0, b: 0),
         )
     }
@@ -146,6 +163,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 30, g: 58, b: 82),
             accentForeground: Color(r: 229, g: 229, b: 229),
             accentBackground: Color(r: 125, g: 211, b: 252),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 0, g: 0, b: 0),
             border: Color(r: 0, g: 0, b: 0),
         )
     }
@@ -157,6 +176,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 255, g: 255, b: 255),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 186, g: 230, b: 253),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -167,6 +188,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 31, g: 31, b: 31),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 186, g: 230, b: 253),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 0, g: 0, b: 0),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -178,6 +201,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 240, g: 249, b: 255),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 147, g: 197, b: 253),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -188,6 +213,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 23, g: 37, b: 84),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 147, g: 197, b: 253),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 0, g: 0, b: 0),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -231,6 +258,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 254, g: 235, b: 220),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 251, g: 176, b: 59),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
             border: Color(r: 0, g: 0, b: 0),
         )
     }
@@ -241,6 +270,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 82, g: 52, b: 28),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 251, g: 176, b: 59),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 0, g: 0, b: 0),
             border: Color(r: 0, g: 0, b: 0),
         )
     }
@@ -252,6 +283,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 255, g: 255, b: 255),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 253, g: 203, b: 110),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -262,6 +295,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 31, g: 31, b: 31),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 253, g: 203, b: 110),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 0, g: 0, b: 0),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -273,6 +308,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 255, g: 247, b: 237),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 252, g: 186, b: 3),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -283,6 +320,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 67, g: 42, b: 22),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 252, g: 186, b: 3),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 0, g: 0, b: 0),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -326,6 +365,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 220, g: 252, b: 231),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 74, g: 222, b: 128),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
             border: Color(r: 0, g: 0, b: 0),
         )
     }
@@ -336,6 +377,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 28, g: 82, b: 46),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 74, g: 222, b: 128),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 0, g: 0, b: 0),
             border: Color(r: 0, g: 0, b: 0),
         )
     }
@@ -347,6 +390,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 255, g: 255, b: 255),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 134, g: 239, b: 172),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -357,6 +402,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 31, g: 31, b: 31),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 134, g: 239, b: 172),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 0, g: 0, b: 0),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -368,6 +415,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 240, g: 253, b: 244),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 74, g: 222, b: 128),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -378,6 +427,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 20, g: 83, b: 45),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 74, g: 222, b: 128),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 0, g: 0, b: 0),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -421,6 +472,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 254, g: 235, b: 220),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 251, g: 176, b: 59),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
             border: Color(r: 0, g: 0, b: 0),
         )
     }
@@ -431,6 +484,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 82, g: 52, b: 28),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 251, g: 176, b: 59),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 0, g: 0, b: 0),
             border: Color(r: 0, g: 0, b: 0),
         )
     }
@@ -442,6 +497,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 238, g: 230, b: 254),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 170, g: 133, b: 255),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -452,6 +509,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 51, g: 35, b: 82),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 169, g: 133, b: 255),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 0, g: 0, b: 0),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -463,6 +522,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 224, g: 242, b: 254),
             accentForeground: Color(r: 0, g: 0, b: 0),
             accentBackground: Color(r: 125, g: 211, b: 252),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
             border: Color(r: 0, g: 0, b: 0)
         )
     }
@@ -473,6 +534,8 @@ extension LeveledBruteTheme.ColorSet {
             background: Color(r: 30, g: 58, b: 82),
             accentForeground: Color(r: 229, g: 229, b: 229),
             accentBackground: Color(r: 125, g: 211, b: 252),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 0, g: 0, b: 0),
             border: Color(r: 0, g: 0, b: 0)
         )
     }

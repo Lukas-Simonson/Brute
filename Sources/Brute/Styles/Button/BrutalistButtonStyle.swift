@@ -13,39 +13,36 @@ extension ButtonStyle where Self == BrutalistButtonStyle {
 
 public struct BrutalistButtonStyle: ButtonStyle {
 
-    @Environment(\.bruteTheme) private var theme
+    @Environment(\.bruteContext) private var context
 
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .padding(theme.dimen.contentPadding)
-            .foregroundStyle(theme.color.secondaryForeground)
-            .background(theme.color.secondaryBackground)
+            .padding(context.dimen.paddingMedium)
+            .foregroundStyle(context.color.accentForeground)
+            .background(context.color.accentBackground)
             .bruteClipped()
             .bruteStroked()
-            .offset(configuration.isPressed ? theme.dimen.shadowOffset : .zero)
+            .offset(configuration.isPressed ? context.dimen.shadowOffset : .zero)
             .bruteShadow()
-            // TODO: Implement Animation for MacOS
-            // .animation(.easeIn(duration: 0.05), value: configuration.isPressed)
+            .animation(.easeIn(duration: 0.05), value: configuration.isPressed)
     }
 }
 
 #Preview {
-    VStack(spacing: 30) {
-        Button("Violet Button") { /* does nothing */ }
-            .buttonStyle(.brute)
-            .bruteTheme(.violet)
+    BruteStyle {
+        VStack(spacing: 30) {
+            Button("Violet Button") { /* does nothing */ }
+                .withLeveledBruteTheme(.violet)
 
-        Button("Blue Button") { /* does nothing */ }
-            .buttonStyle(.brute)
-            .bruteTheme(.blue)
+            Button("Blue Button") { /* does nothing */ }
+                .withLeveledBruteTheme(.blue)
 
-        Button("Orange Button") { /* does nothing */ }
-            .buttonStyle(.brute)
-            .bruteTheme(.orange)
+            Button("Orange Button") { /* does nothing */ }
+                .withLeveledBruteTheme(.orange)
 
-        Button("Green Button") { /* does nothing */ }
-            .buttonStyle(.brute)
-            .bruteTheme(.green)
+            Button("Green Button") { /* does nothing */ }
+                .withLeveledBruteTheme(.green)
+        }
+        .buttonStyle(.brute)
     }
-    .padding()
 }
