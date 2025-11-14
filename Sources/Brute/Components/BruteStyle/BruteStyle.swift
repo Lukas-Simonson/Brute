@@ -29,7 +29,6 @@ public struct BruteStyle<Content: View>: View {
         .disclosureGroupStyle(.brute)
         .gaugeStyle(.brute)
         .progressViewStyle(.brute)
-        .textFieldStyle(.brute)
         .toggleStyle(.bruteSwitch)
     }
 }
