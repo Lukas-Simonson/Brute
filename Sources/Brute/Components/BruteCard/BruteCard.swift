@@ -14,6 +14,10 @@ public struct BruteCard<Content: View>: View {
     @ViewBuilder
     public let content: () -> Content
 
+    public init(@ViewBuilder _ content: @escaping () -> Content ) {
+        self.content = content
+    }
+
     public var body: some View {
         VStack(alignment: .leading, spacing: context.dimen.paddingMedium) {
             content()
