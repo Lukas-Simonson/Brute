@@ -570,6 +570,113 @@ extension BruteTheme.ColorSchemeSet {
     }
 }
 
+// MARK: - Maroon
+extension BruteTheme.ColorSet {
+
+    public static var maroonZeroLight: BruteTheme.ColorSet {
+        BruteTheme.ColorSet(
+            foreground: Color(r: 0, g: 0, b: 0),
+            background: Color(r: 254, g: 226, b: 226),
+            accentForeground: Color(r: 255, g: 255, b: 255),
+            accentBackground: Color(r: 159, g: 18, b: 57),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
+            border: Color(r: 0, g: 0, b: 0),
+        )
+    }
+
+    public static var maroonZeroDark: BruteTheme.ColorSet {
+        BruteTheme.ColorSet(
+            foreground: Color(r: 229, g: 229, b: 229),
+            background: Color(r: 76, g: 29, b: 42),
+            accentForeground: Color(r: 255, g: 255, b: 255),
+            accentBackground: Color(r: 159, g: 18, b: 57),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
+            border: Color(r: 0, g: 0, b: 0),
+        )
+    }
+
+    // MARK: Level One
+    public static var maroonOneLight: BruteTheme.ColorSet {
+        BruteTheme.ColorSet(
+            foreground: Color(r: 0, g: 0, b: 0),
+            background: Color(r: 255, g: 255, b: 255),
+            accentForeground: Color(r: 255, g: 255, b: 255),
+            accentBackground: Color(r: 190, g: 18, b: 60),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
+            border: Color(r: 0, g: 0, b: 0)
+        )
+    }
+
+    public static var maroonOneDark: BruteTheme.ColorSet {
+        BruteTheme.ColorSet(
+            foreground: Color(r: 229, g: 229, b: 229),
+            background: Color(r: 31, g: 31, b: 31),
+            accentForeground: Color(r: 255, g: 255, b: 255),
+            accentBackground: Color(r: 190, g: 18, b: 60),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
+            border: Color(r: 0, g: 0, b: 0)
+        )
+    }
+
+    // MARK: Level Two
+    public static var maroonTwoLight: BruteTheme.ColorSet {
+        BruteTheme.ColorSet(
+            foreground: Color(r: 0, g: 0, b: 0),
+            background: Color(r: 255, g: 241, b: 242),
+            accentForeground: Color(r: 255, g: 255, b: 255),
+            accentBackground: Color(r: 136, g: 19, b: 55),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
+            border: Color(r: 0, g: 0, b: 0)
+        )
+    }
+
+    public static var maroonTwoDark: BruteTheme.ColorSet {
+        BruteTheme.ColorSet(
+            foreground: Color(r: 229, g: 229, b: 229),
+            background: Color(r: 69, g: 26, b: 38),
+            accentForeground: Color(r: 255, g: 255, b: 255),
+            accentBackground: Color(r: 136, g: 19, b: 55),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
+            border: Color(r: 0, g: 0, b: 0)
+        )
+    }
+}
+
+extension BruteTheme.ColorSchemeSet {
+    public static var maroonZero: BruteTheme.ColorSchemeSet {
+        BruteTheme.ColorSchemeSet(
+            colors: [
+                .light: .maroonZeroLight,
+                .dark: .maroonZeroDark,
+            ]
+        )
+    }
+
+    public static var maroonOne: BruteTheme.ColorSchemeSet {
+        BruteTheme.ColorSchemeSet(
+            colors: [
+                .light: .maroonOneLight,
+                .dark: .maroonOneDark,
+            ]
+        )
+    }
+
+    public static var maroonTwo: BruteTheme.ColorSchemeSet {
+        BruteTheme.ColorSchemeSet(
+            colors: [
+                .light: .maroonTwoLight,
+                .dark: .maroonTwoDark,
+            ]
+        )
+    }
+}
+
 // MARK: - Multicolor
 extension BruteTheme.ColorSet {
 

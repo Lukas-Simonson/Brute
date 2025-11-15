@@ -93,6 +93,14 @@ extension BruteTheme {
         )
     }
 
+    public static var maroon: BruteTheme {
+        BruteTheme(
+            colors: [.maroonZero, .maroonOne, .maroonTwo],
+            dimensions: [.maroon],
+            fonts: [.violet]
+        )
+    }
+
     public static var multi: BruteTheme {
         BruteTheme(
             colors: [.multicolorZero, .multicolorOne, .multicolorTwo],
