@@ -57,6 +57,18 @@ extension BruteTheme.DimensionSet {
         )
     }
 
+    public static var magenta: BruteTheme.DimensionSet {
+        BruteTheme.DimensionSet(
+            cornerRadius: 10.0,
+            shadowOffset: CGSize(width: 5.0, height: 5.0),
+            borderWidth: 2.0,
+
+            paddingSmall: 8.0,
+            paddingMedium: 16.0,
+            paddingLarge: 32.0
+        )
+    }
+
     public static var green: BruteTheme.DimensionSet {
         BruteTheme.DimensionSet(
             cornerRadius: 15.0,

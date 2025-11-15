@@ -463,6 +463,113 @@ extension BruteTheme.ColorSchemeSet {
     }
 }
 
+// MARK: - Magenta
+extension BruteTheme.ColorSet {
+
+    public static var magentaZeroLight: BruteTheme.ColorSet {
+        BruteTheme.ColorSet(
+            foreground: Color(r: 0, g: 0, b: 0),
+            background: Color(r: 250, g: 232, b: 255),
+            accentForeground: Color(r: 0, g: 0, b: 0),
+            accentBackground: Color(r: 232, g: 121, b: 249),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
+            border: Color(r: 0, g: 0, b: 0),
+        )
+    }
+
+    public static var magentaZeroDark: BruteTheme.ColorSet {
+        BruteTheme.ColorSet(
+            foreground: Color(r: 229, g: 229, b: 229),
+            background: Color(r: 73, g: 29, b: 82),
+            accentForeground: Color(r: 0, g: 0, b: 0),
+            accentBackground: Color(r: 232, g: 121, b: 249),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
+            border: Color(r: 0, g: 0, b: 0),
+        )
+    }
+
+    // MARK: Level One
+    public static var magentaOneLight: BruteTheme.ColorSet {
+        BruteTheme.ColorSet(
+            foreground: Color(r: 0, g: 0, b: 0),
+            background: Color(r: 255, g: 255, b: 255),
+            accentForeground: Color(r: 0, g: 0, b: 0),
+            accentBackground: Color(r: 240, g: 171, b: 252),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
+            border: Color(r: 0, g: 0, b: 0)
+        )
+    }
+
+    public static var magentaOneDark: BruteTheme.ColorSet {
+        BruteTheme.ColorSet(
+            foreground: Color(r: 229, g: 229, b: 229),
+            background: Color(r: 31, g: 31, b: 31),
+            accentForeground: Color(r: 0, g: 0, b: 0),
+            accentBackground: Color(r: 240, g: 171, b: 252),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
+            border: Color(r: 0, g: 0, b: 0)
+        )
+    }
+
+    // MARK: Level Two
+    public static var magentaTwoLight: BruteTheme.ColorSet {
+        BruteTheme.ColorSet(
+            foreground: Color(r: 0, g: 0, b: 0),
+            background: Color(r: 253, g: 244, b: 255),
+            accentForeground: Color(r: 0, g: 0, b: 0),
+            accentBackground: Color(r: 217, g: 70, b: 239),
+            neutralForeground: Color(r: 0, g: 0, b: 0),
+            neutralBackground: Color(r: 255, g: 255, b: 255),
+            border: Color(r: 0, g: 0, b: 0)
+        )
+    }
+
+    public static var magentaTwoDark: BruteTheme.ColorSet {
+        BruteTheme.ColorSet(
+            foreground: Color(r: 229, g: 229, b: 229),
+            background: Color(r: 59, g: 23, b: 84),
+            accentForeground: Color(r: 0, g: 0, b: 0),
+            accentBackground: Color(r: 217, g: 70, b: 239),
+            neutralForeground: Color(r: 255, g: 255, b: 255),
+            neutralBackground: Color(r: 31, g: 31, b: 31),
+            border: Color(r: 0, g: 0, b: 0)
+        )
+    }
+}
+
+extension BruteTheme.ColorSchemeSet {
+    public static var magentaZero: BruteTheme.ColorSchemeSet {
+        BruteTheme.ColorSchemeSet(
+            colors: [
+                .light: .magentaZeroLight,
+                .dark: .magentaZeroDark,
+            ]
+        )
+    }
+
+    public static var magentaOne: BruteTheme.ColorSchemeSet {
+        BruteTheme.ColorSchemeSet(
+            colors: [
+                .light: .magentaOneLight,
+                .dark: .magentaOneDark,
+            ]
+        )
+    }
+
+    public static var magentaTwo: BruteTheme.ColorSchemeSet {
+        BruteTheme.ColorSchemeSet(
+            colors: [
+                .light: .magentaTwoLight,
+                .dark: .magentaTwoDark,
+            ]
+        )
+    }
+}
+
 // MARK: - Multicolor
 extension BruteTheme.ColorSet {
 

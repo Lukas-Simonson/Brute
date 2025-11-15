@@ -85,6 +85,14 @@ extension BruteTheme {
         )
     }
 
+    public static var magenta: BruteTheme {
+        BruteTheme(
+            colors: [.magentaZero, .magentaOne, .magentaTwo],
+            dimensions: [.magenta],
+            fonts: [.violet]
+        )
+    }
+
     public static var multi: BruteTheme {
         BruteTheme(
             colors: [.multicolorZero, .multicolorOne, .multicolorTwo],
