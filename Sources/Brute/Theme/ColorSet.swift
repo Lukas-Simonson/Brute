@@ -8,35 +8,82 @@
 import SwiftUI
 
 extension BruteTheme {
+    /// A set of colors defining the visual style for a specific theme and level.
+    ///
+    /// `ColorSet` provides semantic color values for foreground, background, accent, neutral,
+    /// and border elements. These colors are typically used together to create a cohesive visual design.
+    ///
+    /// ## Usage
+    ///
+    /// Access colors from the current theme context:
+    ///
+    /// ```swift
+    /// @Environment(\.bruteContext) var theme
+    ///
+    /// Text("Hello")
+    ///     .foregroundColor(theme.color.foreground)
+    ///     .background(theme.color.background)
+    /// ```
     public struct ColorSet {
+        /// Primary text and icon color.
         public let foreground: Color
+
+        /// Primary background color for surfaces.
         public let background: Color
 
+        /// Text and icon color for accent/emphasis elements.
         public let accentForeground: Color
+
+        /// Background color for accent/emphasis elements like buttons or highlights.
         public let accentBackground: Color
 
+        /// Text and icon color for neutral/secondary elements.
         public let neutralForeground: Color
+
+        /// Background color for neutral/secondary elements.
         public let neutralBackground: Color
 
+        /// Color for borders, outlines, and dividers.
         public let border: Color
     }
 
+    /// A container for color sets that adapts to light and dark color schemes.
+    ///
+    /// `ColorSchemeSet` maps SwiftUI's `ColorScheme` (light/dark) to appropriate `ColorSet` instances,
+    /// enabling automatic theme adaptation based on system appearance.
+    ///
+    /// - Important: Must include a light color scheme. Dark mode will fall back to light if not provided.
     public struct ColorSchemeSet {
         private let colors: [ColorScheme: ColorSet]
 
+        /// Creates a new color scheme set with the provided color mappings.
+        ///
+        /// - Parameter colors: Dictionary mapping color schemes to their respective color sets.
+        /// - Precondition: Must include a `.light` color scheme.
         public init(colors: [ColorScheme: ColorSet]) {
             assert(colors.keys.contains(.light), "ColorSchemeSet must include the `light` scheme.")
             self.colors = colors
         }
 
+        /// Returns the color set for the specified color scheme.
+        ///
+        /// If the requested scheme is not available, falls back to the light scheme.
+        ///
+        /// - Parameter scheme: The color scheme to retrieve colors for.
+        /// - Returns: The appropriate color set for the given scheme.
         func color(for scheme: ColorScheme) -> ColorSet {
             return colors[scheme] ?? colors[.light]!
         }
     }
 }
 
-// MARK: - Violet
+// MARK: - Violet Color Sets
+
+/// Predefined violet color sets for light and dark modes at different theme levels.
 extension BruteTheme.ColorSet {
+    /// Violet color set for level zero in light mode.
+    ///
+    /// Features a soft purple background with darker purple accents.
     public static var violetZeroLight: BruteTheme.ColorSet {
         BruteTheme.ColorSet(
             foreground: Color(r: 0, g: 0, b: 0),
@@ -113,7 +160,9 @@ extension BruteTheme.ColorSet {
 
 }
 
+/// Predefined violet color scheme sets combining light and dark modes.
 extension BruteTheme.ColorSchemeSet {
+    /// Violet color scheme set for theme level zero.
     public static var violetZero: BruteTheme.ColorSchemeSet {
         BruteTheme.ColorSchemeSet(
             colors: [
@@ -142,7 +191,9 @@ extension BruteTheme.ColorSchemeSet {
     }
 }
 
-// MARK: - Blue
+// MARK: - Blue Color Sets
+
+/// Predefined blue color sets for light and dark modes at different theme levels.
 extension BruteTheme.ColorSet {
     
     public static var blueZeroLight: BruteTheme.ColorSet {
@@ -220,7 +271,9 @@ extension BruteTheme.ColorSet {
     }
 }
 
+/// Predefined blue color scheme sets combining light and dark modes.
 extension BruteTheme.ColorSchemeSet {
+    /// Blue color scheme set for theme level zero.
     public static var blueZero: BruteTheme.ColorSchemeSet {
         BruteTheme.ColorSchemeSet(
             colors: [
@@ -249,7 +302,9 @@ extension BruteTheme.ColorSchemeSet {
     }
 }
 
-// MARK: - Orange
+// MARK: - Orange Color Sets
+
+/// Predefined orange color sets for light and dark modes at different theme levels.
 extension BruteTheme.ColorSet {
 
     public static var orangeZeroLight: BruteTheme.ColorSet {
@@ -327,7 +382,9 @@ extension BruteTheme.ColorSet {
     }
 }
 
+/// Predefined orange color scheme sets combining light and dark modes.
 extension BruteTheme.ColorSchemeSet {
+    /// Orange color scheme set for theme level zero.
     public static var orangeZero: BruteTheme.ColorSchemeSet {
         BruteTheme.ColorSchemeSet(
             colors: [
@@ -356,7 +413,9 @@ extension BruteTheme.ColorSchemeSet {
     }
 }
 
-// MARK: - Green
+// MARK: - Green Color Sets
+
+/// Predefined green color sets for light and dark modes at different theme levels.
 extension BruteTheme.ColorSet {
 
     public static var greenZeroLight: BruteTheme.ColorSet {
@@ -434,7 +493,9 @@ extension BruteTheme.ColorSet {
     }
 }
 
+/// Predefined green color scheme sets combining light and dark modes.
 extension BruteTheme.ColorSchemeSet {
+    /// Green color scheme set for theme level zero.
     public static var greenZero: BruteTheme.ColorSchemeSet {
         BruteTheme.ColorSchemeSet(
             colors: [
@@ -463,7 +524,9 @@ extension BruteTheme.ColorSchemeSet {
     }
 }
 
-// MARK: - Magenta
+// MARK: - Magenta Color Sets
+
+/// Predefined magenta color sets for light and dark modes at different theme levels.
 extension BruteTheme.ColorSet {
 
     public static var magentaZeroLight: BruteTheme.ColorSet {
@@ -541,7 +604,9 @@ extension BruteTheme.ColorSet {
     }
 }
 
+/// Predefined magenta color scheme sets combining light and dark modes.
 extension BruteTheme.ColorSchemeSet {
+    /// Magenta color scheme set for theme level zero.
     public static var magentaZero: BruteTheme.ColorSchemeSet {
         BruteTheme.ColorSchemeSet(
             colors: [
@@ -570,7 +635,9 @@ extension BruteTheme.ColorSchemeSet {
     }
 }
 
-// MARK: - Maroon
+// MARK: - Maroon Color Sets
+
+/// Predefined maroon color sets for light and dark modes at different theme levels.
 extension BruteTheme.ColorSet {
 
     public static var maroonZeroLight: BruteTheme.ColorSet {
@@ -648,7 +715,9 @@ extension BruteTheme.ColorSet {
     }
 }
 
+/// Predefined maroon color scheme sets combining light and dark modes.
 extension BruteTheme.ColorSchemeSet {
+    /// Maroon color scheme set for theme level zero.
     public static var maroonZero: BruteTheme.ColorSchemeSet {
         BruteTheme.ColorSchemeSet(
             colors: [
@@ -677,7 +746,9 @@ extension BruteTheme.ColorSchemeSet {
     }
 }
 
-// MARK: - Multicolor
+// MARK: - Multicolor Color Sets
+
+/// Predefined multicolor sets that cycle through different colors at each theme level.
 extension BruteTheme.ColorSet {
 
     public static var multicolorZeroLight: BruteTheme.ColorSet {
@@ -755,7 +826,9 @@ extension BruteTheme.ColorSet {
     }
 }
 
+/// Predefined multicolor scheme sets that change colors at each level.
 extension BruteTheme.ColorSchemeSet {
+    /// Multicolor scheme set for theme level zero (orange tones).
     public static var multicolorZero: BruteTheme.ColorSchemeSet {
         BruteTheme.ColorSchemeSet(
             colors: [
