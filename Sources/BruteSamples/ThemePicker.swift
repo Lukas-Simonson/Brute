@@ -15,6 +15,9 @@ struct ThemePicker<Content: View>: View {
         ("Blue", BruteTheme.blue),
         ("Orange", BruteTheme.orange),
         ("Green", BruteTheme.green),
+        ("Magenta", BruteTheme.magenta),
+        ("Maroon", BruteTheme.maroon),
+        ("Multi", BruteTheme.multi)
     ]
 
     @Binding var isExpanded: Bool
