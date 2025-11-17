@@ -28,6 +28,7 @@ struct Sample: View {
                 textFieldSamples
                 toggleSamples
                 pickerSamples
+                noticeSamples
             }
         }
     }
@@ -46,6 +47,8 @@ struct Sample: View {
         var textFields = Self.default
         var toggles = Self.default
         var pickers = Self.default
+
+        var notices = Self.default
     }
 }
 
@@ -196,6 +199,38 @@ extension Sample {
                 }
             }
             .brutePickerStyle(.segmented)
+        }
+    }
+}
+
+// MARK: Notices
+extension Sample {
+    private var noticeSamples: some View {
+        DisclosureGroup("Notices", isExpanded: $groups.notices) {
+            VStack {
+                BruteNotice(
+                    title: { Label("Welcome!", systemImage: "person.fill") },
+                    content: { Text("This is the beautiful style of Neo Brutalism") }
+                )
+
+                BruteNotice(
+                    fill: Color.green,
+                    title: { Label("Success", systemImage: "checkmark.circle") },
+                    content: { Text("Your changes have been saved.") }
+                )
+
+                BruteNotice(
+                    fill: Color.yellow,
+                    title: { Label("Warning", systemImage: "exclamationmark.triangle.fill") },
+                    content: { Text("Saving these changes may result in loss of data") }
+                )
+
+                BruteNotice(
+                    fill: Color.red,
+                    title: { Label("Error", systemImage: "exclamationmark.warninglight.fill") },
+                    content: { Text("Saving these changes may result in loss of data") }
+                )
+            }
         }
     }
 }
