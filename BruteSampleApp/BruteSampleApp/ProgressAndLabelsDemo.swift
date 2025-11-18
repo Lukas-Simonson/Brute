@@ -9,15 +9,17 @@ import SwiftUI
 import Brute
 
 struct ProgressAndLabelsDemo: View {
+
+    @Environment(\.bruteContext) private var context
+
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(alignment: .leading, spacing: context.dimen.paddingMedium) {
             // Progress Views - Determinate
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: context.dimen.paddingSmall) {
                 Text("ProgressView - Determinate")
-                    .font(.headline)
+                    .font(context.font.header)
                 Text("Filled bar showing specific progress")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                    .font(context.font.caption)
 
                 ProgressView("Loading", value: 0.25)
                     .progressViewStyle(.brute)
@@ -32,12 +34,11 @@ struct ProgressAndLabelsDemo: View {
             Divider()
 
             // Progress Views - Indeterminate
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: context.dimen.paddingSmall) {
                 Text("ProgressView - Indeterminate")
-                    .font(.headline)
+                    .font(context.font.header)
                 Text("Animated chunky blocks")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                    .font(context.font.caption)
 
                 ProgressView("Loading...")
                     .progressViewStyle(.brute)
@@ -49,12 +50,11 @@ struct ProgressAndLabelsDemo: View {
             Divider()
 
             // Badge Labels
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: context.dimen.paddingSmall) {
                 Text(".bruteBadge Labels")
-                    .font(.headline)
+                    .font(context.font.header)
                 Text("Accent-colored badges")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                    .font(context.font.caption)
 
                 HStack {
                     Label("New", systemImage: "star.fill")
@@ -79,11 +79,11 @@ struct ProgressAndLabelsDemo: View {
             Divider()
 
             // Neutral Badge Labels
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: context.dimen.paddingSmall) {
                 Text(".bruteBadgeNeutral Labels")
-                    .font(.headline)
+                    .font(context.font.header)
                 Text("Neutral-colored badges for secondary info")
-                    .font(.caption)
+                    .font(context.font.caption)
                     .foregroundStyle(.secondary)
 
                 HStack {
@@ -98,7 +98,6 @@ struct ProgressAndLabelsDemo: View {
                 }
             }
         }
-        .padding()
     }
 }
 

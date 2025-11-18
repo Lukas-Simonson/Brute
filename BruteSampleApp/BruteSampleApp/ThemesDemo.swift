@@ -5,32 +5,32 @@
 //  Created by Lukas Simonson on 11/17/25.
 //
 
-import SwiftUI
 import Brute
+import SwiftUI
 
 struct ThemesDemo: View {
+
+    @Environment(\.bruteContext) private var theme
+
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(alignment: .leading, spacing: theme.dimen.paddingMedium) {
             // Multi-level theming
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: theme.dimen.paddingSmall) {
                 Text("Multi-Level Theming")
-                    .font(.headline)
+                    .font(theme.font.header)
                 Text("Each nested level gets progressively darker variations")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                    .font(theme.font.caption)
+
+                Text("Level 0 (Default)")
+                    .font(theme.font.header)
 
                 BruteCard {
-                    Text("Level 0 (Default)")
-                        .font(.title3)
+                    Text("Level 1 (Nested)")
+                        .font(theme.font.body)
 
                     BruteCard {
-                        Text("Level 1 (Nested)")
-                            .font(.body)
-
-                        BruteCard {
-                            Text("Level 2 (Double Nested)")
-                                .font(.caption)
-                        }
+                        Text("Level 2 (Double Nested)")
+                            .font(theme.font.caption)
                     }
                 }
             }
@@ -38,55 +38,56 @@ struct ThemesDemo: View {
             Divider()
 
             // View Modifiers
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: theme.dimen.paddingMedium) {
                 Text("View Modifiers")
-                    .font(.headline)
+                    .font(theme.font.header)
                 Text("Apply brutalist styling to any view")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                    .font(theme.font.caption)
 
-                VStack(alignment: .leading, spacing: 8) {
+                VStack(alignment: .leading, spacing: theme.dimen.paddingSmall) {
                     Text(".brutalized()")
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
+                        .font(theme.font.header)
 
                     Text("Complete brutalist treatment")
-                        .padding()
+                        .font(theme.font.caption)
+                        .padding(theme.dimen.paddingSmall)
+                        .background(theme.color.accentBackground)
+                        .foregroundStyle(theme.color.accentForeground)
                         .brutalized()
                 }
 
                 VStack(alignment: .leading, spacing: 8) {
                     Text(".brutalized(with:)")
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
+                        .font(theme.font.header)
 
                     Text("With custom background")
-                        .padding()
-                        .brutalized(with: Color.purple.opacity(0.2))
+                        .font(theme.font.caption)
+                        .padding(theme.dimen.paddingSmall)
+                        .foregroundStyle(theme.color.accentForeground)
+                        .brutalized(with: theme.color.accentBackground)
                 }
 
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Individual Modifiers")
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
+                        .font(theme.font.header)
 
                     HStack {
                         Text("Clipped")
-                            .padding(8)
-                            .background(Color.gray.opacity(0.2))
+                            .padding(theme.dimen.paddingSmall)
+                            .background(theme.color.accentBackground)
+                            .foregroundStyle(theme.color.accentForeground)
                             .bruteClipped()
 
                         Text("Stroked")
-                            .padding(8)
-                            .background(Color.gray.opacity(0.2))
-                            .bruteClipped()
+                            .padding(theme.dimen.paddingSmall)
+                            .background(theme.color.accentBackground)
+                            .foregroundStyle(theme.color.accentForeground)
                             .bruteStroked()
 
                         Text("Shadow")
-                            .padding(8)
-                            .background(Color.gray.opacity(0.2))
-                            .bruteClipped()
-                            .bruteStroked()
+                            .padding(theme.dimen.paddingSmall)
+                            .background(theme.color.accentBackground)
+                            .foregroundStyle(theme.color.accentForeground)
                             .bruteShadow()
                     }
                 }
@@ -95,17 +96,15 @@ struct ThemesDemo: View {
             Divider()
 
             // Theme Context
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: theme.dimen.paddingSmall) {
                 Text("Accessing Theme Context")
-                    .font(.headline)
+                    .font(theme.font.header)
                 Text("Use @Environment to access theme values")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                    .font(theme.font.caption)
 
                 CustomThemedView()
             }
         }
-        .padding()
     }
 }
 
@@ -113,7 +112,7 @@ struct CustomThemedView: View {
     @Environment(\.bruteContext) private var context
 
     var body: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: context.dimen.paddingSmall) {
             Text("Custom View Using Theme Context")
                 .foregroundStyle(context.color.accentForeground)
                 .padding(context.dimen.paddingMedium)
@@ -121,7 +120,10 @@ struct CustomThemedView: View {
                 .cornerRadius(context.dimen.cornerRadius)
                 .overlay {
                     RoundedRectangle(cornerRadius: context.dimen.cornerRadius)
-                        .stroke(context.color.border, lineWidth: context.dimen.borderWidth)
+                        .stroke(
+                            context.color.border,
+                            lineWidth: context.dimen.borderWidth
+                        )
                 }
 
             Text("Uses context.color, context.dimen, and context.font")

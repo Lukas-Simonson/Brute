@@ -9,27 +9,31 @@ import SwiftUI
 import Brute
 
 struct ComponentsDemo: View {
+
+    @Environment(\.bruteContext) private var theme
+
     @State private var pickerSelection = "Option 1"
     let pickerOptions = ["Option 1", "Option 2", "Option 3"]
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
+        VStack(alignment: .leading, spacing: theme.dimen.paddingMedium) {
             // BruteCard Examples
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: theme.dimen.paddingSmall) {
                 Text("BruteCard")
-                    .font(.headline)
+                    .font(theme.font.header)
 
                 BruteCard {
                     Text("Simple Card")
-                        .font(.title3)
+                        .font(theme.font.header)
                     Text("This is a card component with the current theme")
                 }
 
                 BruteCard {
-                    VStack(alignment: .leading, spacing: 8) {
+                    VStack(alignment: .leading, spacing: theme.dimen.paddingSmall) {
                         Text("Card with Content")
                             .font(.title3)
                             .fontWeight(.bold)
+
                         Text("Cards can contain any SwiftUI views")
                         HStack {
                             Image(systemName: "star.fill")
@@ -43,29 +47,29 @@ struct ComponentsDemo: View {
             Divider()
 
             // BruteNotice Examples
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: theme.dimen.paddingSmall) {
                 Text("BruteNotice")
-                    .font(.headline)
+                    .font(theme.font.header)
 
-                BruteNotice {
-                    Label("Info", systemImage: "info.circle")
-                } content: {
+                BruteNotice("Info", systemImage: "info.circle") {
                     Text("This is an informational notice component")
                 }
 
-                BruteNotice {
-                    Label("Important", systemImage: "exclamationmark.triangle")
-                } content: {
+                BruteNotice("Important", systemImage: "exclamationmark.triangle", fill: .yellow) {
                     Text("Notices can highlight important information")
+                }
+
+                BruteNotice("Error", systemImage: "exclamationmark.circle", fill: .red) {
+                    Text("And can be customized with a special fill color")
                 }
             }
 
             Divider()
 
             // BrutePicker Example
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: theme.dimen.paddingSmall) {
                 Text("BrutePicker")
-                    .font(.headline)
+                    .font(theme.font.header)
 
                 BrutePicker(selection: $pickerSelection) {
                     ForEach(pickerOptions, id: \.self) { option in
@@ -74,10 +78,9 @@ struct ComponentsDemo: View {
                 }
 
                 Text("Selected: \(pickerSelection)")
-                    .font(.caption)
+                    .font(theme.font.caption)
             }
         }
-        .padding()
     }
 }
 

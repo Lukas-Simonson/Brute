@@ -67,13 +67,13 @@ struct ButtonStylesDemo: View {
 
                 HStack {
                     Button("Tap Me") { }
-                        .buttonStyle(.brute)
+                        .buttonStyle(.bruteNeutral)
 
                     Button("Press") { }
-                        .buttonStyle(.brute)
+                        .buttonStyle(.bruteNeutral)
 
                     Button("Click") { }
-                        .buttonStyle(.brute)
+                        .buttonStyle(.bruteNeutral)
                 }
             }
 
@@ -99,7 +99,6 @@ struct ButtonStylesDemo: View {
                 }
             }
         }
-        .padding()
     }
 }
 

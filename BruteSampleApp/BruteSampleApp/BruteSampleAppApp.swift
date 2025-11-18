@@ -10,11 +10,15 @@ import Brute
 
 @main
 struct BruteSampleAppApp: App {
+
+    @State var selectedTheme = ThemeOption.violet
+
     var body: some Scene {
         WindowGroup {
             BruteStyle {
-                ContentView()
+                ContentView(selectedTheme: $selectedTheme)
             }
+            .bruteTheme(selectedTheme.theme)
         }
     }
 }

@@ -32,7 +32,6 @@ public struct BrutalistReverseButtonStyle: ButtonStyle {
                     .fill(context.color.border)
                     .offset(configuration.isPressed ? context.dimen.shadowOffset : .zero)
             }
-            .animation(.easeIn(duration: 0.05), value: configuration.isPressed)
     }
 }
 

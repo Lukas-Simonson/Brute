@@ -10,16 +10,16 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.bruteContext) private var theme
 
-    @State private var selectedTheme: ThemeOption = .violet
+    @Binding var selectedTheme: ThemeOption
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: 20) {
+                VStack(spacing: theme.dimen.paddingMedium) {
                     // Header
-                    VStack(spacing: 12) {
+                    VStack(alignment: .leading, spacing: theme.dimen.paddingSmall) {
                         Text("Brute")
                             .font(.system(size: 48, weight: .black))
                         Text("Neo-Brutalist Design System")
@@ -35,7 +35,7 @@ struct ContentView: View {
                     .padding(.top)
 
                     // Demo sections
-                    VStack(spacing: 20) {
+                    VStack(spacing: theme.dimen.paddingMedium) {
                         DisclosureGroup {
                             ComponentsDemo()
                         } label: {
@@ -44,51 +44,45 @@ struct ContentView: View {
                                 systemImage: "square.stack.3d.up"
                             )
                         }
-                        .disclosureGroupStyle(.brute)
 
                         DisclosureGroup {
                             ButtonStylesDemo()
                         } label: {
                             Label("Buttons", systemImage: "hand.tap")
                         }
-                        .disclosureGroupStyle(.brute)
 
                         DisclosureGroup {
                             ToggleStylesDemo()
                         } label: {
                             Label("Toggles", systemImage: "switch.2")
                         }
-                        .disclosureGroupStyle(.brute)
 
                         DisclosureGroup {
                             FormControlsDemo()
                         } label: {
                             Label("Form Controls", systemImage: "pencil")
                         }
-                        .disclosureGroupStyle(.brute)
 
                         DisclosureGroup {
                             ProgressAndLabelsDemo()
                         } label: {
                             Label("Progress & Labels", systemImage: "chart.bar")
                         }
-                        .disclosureGroupStyle(.brute)
 
                         DisclosureGroup {
                             ThemesDemo()
                         } label: {
                             Label("Themes", systemImage: "paintpalette")
                         }
-                        .disclosureGroupStyle(.brute)
                     }
+                    .disclosureGroupStyle(.brute)
                 }
-                .padding()
+                .padding(theme.dimen.paddingMedium)
             }
             .background {
                 BruteGridBackground()
             }
         }
-        .bruteTheme(selectedTheme.theme)
     }
 }
 
@@ -112,6 +106,6 @@ enum ThemeOption: String, CaseIterable, Hashable {
 
 #Preview {
     BruteStyle {
-        ContentView()
+        ContentView(selectedTheme: .constant(.violet))
     }
 }

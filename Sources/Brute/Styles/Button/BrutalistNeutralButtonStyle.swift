@@ -29,7 +29,6 @@ public struct BrutalistNeutralButtonStyle: ButtonStyle {
             .bruteStroked()
             .offset(configuration.isPressed ? context.dimen.shadowOffset : .zero)
             .bruteShadow()
-            .animation(.easeIn(duration: 0.05), value: configuration.isPressed)
     }
 }
 

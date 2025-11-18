@@ -9,20 +9,22 @@ import SwiftUI
 import Brute
 
 struct FormControlsDemo: View {
+
+    @Environment(\.bruteContext) private var theme
+
     @State private var username = ""
     @State private var email = ""
     @State private var password = ""
     @State private var gaugeValue = 0.75
 
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: theme.dimen.paddingMedium) {
             // Text Field
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: theme.dimen.paddingMedium) {
                 Text(".brute TextField")
-                    .font(.headline)
+                    .font(theme.font.header)
                 Text("Animated shadow on focus")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                    .font(theme.font.caption)
 
                 TextField("Username", text: $username)
                     .textFieldStyle(.brute)
@@ -37,28 +39,25 @@ struct FormControlsDemo: View {
             Divider()
 
             // Disclosure Group
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: theme.dimen.paddingSmall) {
                 Text(".brute DisclosureGroup")
-                    .font(.headline)
+                    .font(theme.font.header)
                 Text("Animated expand/collapse")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                    .font(theme.font.caption)
 
                 DisclosureGroup {
                     Text("This content is hidden until expanded")
-                        .padding()
                 } label: {
                     Label("More Information", systemImage: "info.circle")
                 }
                 .disclosureGroupStyle(.brute)
 
                 DisclosureGroup {
-                    VStack(alignment: .leading, spacing: 8) {
+                    VStack(alignment: .leading, spacing: theme.dimen.paddingSmall) {
                         Text("Line 1")
                         Text("Line 2")
                         Text("Line 3")
                     }
-                    .padding()
                 } label: {
                     Label("Details", systemImage: "list.bullet")
                 }
@@ -68,11 +67,11 @@ struct FormControlsDemo: View {
             Divider()
 
             // Gauge
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: theme.dimen.paddingSmall) {
                 Text(".brute Gauge")
-                    .font(.headline)
+                    .font(theme.font.header)
                 Text("Progress gauge with filled bar")
-                    .font(.caption)
+                    .font(theme.font.caption)
                     .foregroundStyle(.secondary)
 
                 Gauge(value: gaugeValue) {
@@ -88,7 +87,6 @@ struct FormControlsDemo: View {
                 .gaugeStyle(.brute)
             }
         }
-        .padding()
     }
 }
 

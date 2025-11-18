@@ -15,7 +15,7 @@ public struct BruteGridBackground: View {
 
     public var body: some View {
         BruteGridShape(density: Int(context.dimen.paddingSmall))
-            .stroke(context.color.foreground.opacity(0.15), lineWidth: context.dimen.borderWidth)
+            .stroke(context.color.foreground.opacity(0.05), lineWidth: context.dimen.borderWidth)
             .background(context.color.background)
             .ignoresSafeArea()
     }
