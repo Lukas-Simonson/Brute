@@ -69,8 +69,6 @@ public struct BruteCard<Content: View>: View {
         }
         .padding(context.dimen.paddingMedium)
         .brutalized(with: context.color.background)
-//        .background(context.color.background)
-//        .brutalized()
     }
 }
 
