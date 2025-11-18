@@ -8,9 +8,14 @@
 import SwiftUI
 
 extension ProgressViewStyle where Self == BrutalistProgressViewStyle {
+    /// A brutalist progress view style with determinate and indeterminate modes.
     public static var brute: Self { BrutalistProgressViewStyle() }
 }
 
+/// A progress view style displaying both determinate and indeterminate progress states.
+///
+/// For determinate progress (with value), shows a filled bar. For indeterminate progress
+/// (without value), displays animated chunky blocks moving across the view.
 public struct BrutalistProgressViewStyle: ProgressViewStyle {
 
     @Environment(\.bruteContext) var context
