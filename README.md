@@ -1,8 +1,6 @@
-# Brute
+![brute](https://github.com/Lukas-Simonson/Brute/Resources/Images/brute_icon.png)
 
 A comprehensive Neo-Brutalist design system for SwiftUI, featuring bold borders, offset shadows, and vibrant color themes.
-
-> TODO: Add hero image/screenshot
 
 ## Features
 
@@ -36,7 +34,7 @@ Or add it to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/YOUR_USERNAME/Brute", from: "1.0.0")
+    .package(url: "https://github.com/Lukas-Simonson/Brute", from: "1.0.0")
 ]
 ```
 
@@ -71,25 +69,32 @@ BruteCard {
     Text("Card Content")
     Text("With multiple views")
 }
-.bruteTheme(.violet)
 ```
 
-> TODO: Add BruteCard screenshot
+![Brute Card Preview](https://github.com/Lukas-Simonson/Brute/Resources/Images/card_example.png)
 
 ### BruteNotice
 
 Display important information with prominent styling:
 
 ```swift
-BruteNotice {
-    Text("Alert Title")
-} content: {
-    Text("Important message here")
+VStack {
+    BruteNotice("Info", systemImage: "info.circle") {
+        Text("This is an informational notice component")
+    }
+
+    BruteNotice("Important", systemImage: "exclamationmark.triangle", fill: .yellow) {
+        Text("Notices can highlight important information")
+    }
+
+    BruteNotice("Error", systemImage: "exclamationmark.circle", fill: .red) {
+        Text("And can be customized with a special fill color")
+    }
 }
-.bruteTheme(.orange)
+.padding()
 ```
 
-> TODO: Add BruteNotice screenshot
+![Brute Notice Preview](https://github.com/Lukas-Simonson/Brute/Resources/Images/notice_example.png)
 
 ### BrutePicker
 
@@ -99,13 +104,17 @@ A customizable picker with brutalist styling:
 @State private var selection = "Option 1"
 let options = ["Option 1", "Option 2", "Option 3"]
 
-BrutePicker(selection: $selection, options: options) { option in
-    Text(option)
+var body: some View {
+    BrutePicker(selection: $selection) {
+        ForEach(options, id: \.self) { option in
+            Text(option)
+        }
+    }
+    .padding()
 }
-.bruteTheme(.blue)
 ```
 
-> TODO: Add BrutePicker screenshot
+![Brute Picker Preview](https://github.com/Lukas-Simonson/Brute/Resources/Images/brute_picker_example.png)
 
 ## Theming
 
@@ -135,9 +144,11 @@ VStack {
 - `.blue` - Blue color scheme
 - `.orange` - Orange color scheme
 - `.green` - Green color scheme
+- `.magenta` - Magenta color scheme
+- `.maroon` - Maroon color scheme
 - `.multi` - Multi-color gradient theme
 
-> TODO: Add theme color palette comparison image
+![Color Palette Comparison](https://github.com/Lukas-Simonson/Brute/Resources/Images/color_palette_comparison.png)
 
 ### Creating Custom Themes
 
@@ -187,7 +198,7 @@ Button("Reverse") { }
     .buttonStyle(.bruteReverse)
 ```
 
-> TODO: Add button styles comparison image
+![Button Style Comparison](https://github.com/Lukas-Simonson/Brute/Resources/Images/button_style_comparison.png)
 
 ### Toggle Styles
 
@@ -201,7 +212,7 @@ Toggle("Enable", isOn: $enabled)
     .toggleStyle(.bruteSwitch)
 ```
 
-> TODO: Add toggle styles comparison image
+![Toggle Style Comparison](https://github.com/Lukas-Simonson/Brute/Resources/Images/toggle_style_comparison.png)
 
 ### Text Field Style
 
@@ -224,7 +235,7 @@ ProgressView("Loading...")
     .progressViewStyle(.brute)
 ```
 
-> TODO: Add progress view styles image
+![Progress View Style Example](https://github.com/Lukas-Simonson/Brute/Resources/Images/progress_view_style_example.png)
 
 ### Label Styles
 
@@ -237,6 +248,8 @@ Label("New", systemImage: "star")
 Label("Info", systemImage: "info.circle")
     .labelStyle(.bruteBadgeNeutral)
 ```
+
+![Label Style Comparison](https://github.com/Lukas-Simonson/Brute/Resources/Images/label_style_comparison.png)
 
 ### Other Styles
 
@@ -298,26 +311,6 @@ struct CustomView: View {
 }
 ```
 
-## Examples
-
-> TODO: Add link to example project
-
 ## Documentation
 
 For detailed documentation of all components, styles, and modifiers, see the inline documentation in the source code.
-
-## License
-
-> TODO: Add license information
-
-## Contributing
-
-> TODO: Add contribution guidelines
-
-## Credits
-
-Created by Lukas Simonson
-
----
-
-> TODO: Add footer image or badge

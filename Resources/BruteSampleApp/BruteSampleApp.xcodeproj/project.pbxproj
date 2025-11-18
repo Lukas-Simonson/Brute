@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C7D94BF2ECCFB8600FC5ADB /* Brute in Frameworks */ = {isa = PBXBuildFile; productRef = 6C7D94BE2ECCFB8600FC5ADB /* Brute */; };
 		6C7E8E112ECC34F800555649 /* Brute in Frameworks */ = {isa = PBXBuildFile; productRef = 6C7E8E102ECC34F800555649 /* Brute */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C7E8E112ECC34F800555649 /* Brute in Frameworks */,
+				6C7D94BF2ECCFB8600FC5ADB /* Brute in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +73,7 @@
 			name = BruteSampleApp;
 			packageProductDependencies = (
 				6C7E8E102ECC34F800555649 /* Brute */,
+				6C7D94BE2ECCFB8600FC5ADB /* Brute */,
 			);
 			productName = BruteSampleApp;
 			productReference = 6C7E8E012ECC34C600555649 /* BruteSampleApp.app */;
@@ -101,7 +104,7 @@
 			mainGroup = 6C7E8DF82ECC34C600555649;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				6C7E8E0F2ECC34F800555649 /* XCLocalSwiftPackageReference "../../Brute" */,
+				6C7D94BD2ECCFB8600FC5ADB /* XCLocalSwiftPackageReference "../../../Brute" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6C7E8E022ECC34C600555649 /* Products */;
@@ -339,13 +342,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		6C7E8E0F2ECC34F800555649 /* XCLocalSwiftPackageReference "../../Brute" */ = {
+		6C7D94BD2ECCFB8600FC5ADB /* XCLocalSwiftPackageReference "../../../Brute" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../Brute;
+			relativePath = ../../../Brute;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6C7D94BE2ECCFB8600FC5ADB /* Brute */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Brute;
+		};
 		6C7E8E102ECC34F800555649 /* Brute */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Brute;
