@@ -8,12 +8,18 @@
 import SwiftUI
 
 extension LabelStyle where Self == BrutalistBadgeNeutralLabelStyle {
+    /// A badge-style label with neutral colors displaying title and/or icon.
     public static var bruteBadgeNeutral: Self { BrutalistBadgeNeutralLabelStyle(mode: .titleAndIcon) }
+    /// A badge-style label with neutral colors and custom display mode.
     public static func bruteBadgeNeutral(_ mode: BrutalistBadgeLabelStyle.Mode) -> Self {
         BrutalistBadgeNeutralLabelStyle(mode: mode)
     }
 }
 
+/// A compact badge-style label with neutral colors for secondary tags and indicators.
+///
+/// Similar to `BrutalistBadgeLabelStyle` but uses neutral colors instead of accent colors,
+/// making it suitable for less prominent labels and secondary information.
 public struct BrutalistBadgeNeutralLabelStyle: LabelStyle {
 
     @Environment(\.bruteContext) private var context

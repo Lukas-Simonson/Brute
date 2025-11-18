@@ -8,14 +8,20 @@
 import SwiftUI
 
 extension LabelStyle where Self == BrutalistBadgeLabelStyle {
+    /// A badge-style label with accent colors displaying title and/or icon.
     public static var bruteBadge: Self {
         BrutalistBadgeLabelStyle(mode: .titleAndIcon)
     }
+    /// A badge-style label with custom display mode (title, icon, or both).
     public static func bruteBadge(_ mode: BrutalistBadgeLabelStyle.Mode) -> Self {
         BrutalistBadgeLabelStyle(mode: mode)
     }
 }
 
+/// A compact badge-style label with accent colors for tags, status indicators, and chips.
+///
+/// Displays labels as small, pill-shaped badges with accent background. Supports
+/// three modes: title only, icon only, or both title and icon.
 public struct BrutalistBadgeLabelStyle: LabelStyle {
 
     @Environment(\.bruteContext) private var context
@@ -41,9 +47,13 @@ public struct BrutalistBadgeLabelStyle: LabelStyle {
         .bruteStroked()
     }
 
+    /// Display mode for badge labels.
     public enum Mode {
+        /// Show both title and icon.
         case titleAndIcon
+        /// Show title text only.
         case titleOnly
+        /// Show icon only.
         case iconOnly
     }
 }
