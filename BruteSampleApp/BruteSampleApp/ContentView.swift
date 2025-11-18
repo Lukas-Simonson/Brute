@@ -14,6 +14,8 @@ struct ContentView: View {
 
     @Binding var selectedTheme: ThemeOption
 
+    @State private var currentGroup: ContentGroup?
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -36,44 +38,47 @@ struct ContentView: View {
 
                     // Demo sections
                     VStack(spacing: theme.dimen.paddingMedium) {
-                        DisclosureGroup {
-                            ComponentsDemo()
-                        } label: {
-                            Label(
-                                "Components",
-                                systemImage: "square.stack.3d.up"
-                            )
-                        }
+                        disclosure(
+                            for: .components,
+                            title: "Components",
+                            systemImage: "square.stack.3d.up",
+                            content: { ComponentsDemo() }
+                        )
 
-                        DisclosureGroup {
-                            ButtonStylesDemo()
-                        } label: {
-                            Label("Buttons", systemImage: "hand.tap")
-                        }
+                        disclosure(
+                            for: .buttons,
+                            title: "Buttons",
+                            systemImage: "hand.tap",
+                            content: { ButtonStylesDemo() }
+                        )
 
-                        DisclosureGroup {
-                            ToggleStylesDemo()
-                        } label: {
-                            Label("Toggles", systemImage: "switch.2")
-                        }
+                        disclosure(
+                            for: .toggles,
+                            title: "Toggles",
+                            systemImage: "switch.2",
+                            content: { ToggleStylesDemo() }
+                        )
 
-                        DisclosureGroup {
-                            FormControlsDemo()
-                        } label: {
-                            Label("Form Controls", systemImage: "pencil")
-                        }
+                        disclosure(
+                            for: .formControls,
+                            title: "Form Controls",
+                            systemImage: "pencil",
+                            content: { FormControlsDemo() }
+                        )
 
-                        DisclosureGroup {
-                            ProgressAndLabelsDemo()
-                        } label: {
-                            Label("Progress & Labels", systemImage: "chart.bar")
-                        }
+                        disclosure(
+                            for: .progressAndLabels,
+                            title: "Progress & Labels",
+                            systemImage: "char.bar",
+                            content: { ProgressAndLabelsDemo() }
+                        )
 
-                        DisclosureGroup {
-                            ThemesDemo()
-                        } label: {
-                            Label("Themes", systemImage: "paintpalette")
-                        }
+                        disclosure(
+                            for: .themes,
+                            title: "Themes",
+                            systemImage: "paintpalette",
+                            content: { ThemesDemo() }
+                        )
                     }
                     .disclosureGroupStyle(.brute)
                 }
@@ -83,6 +88,28 @@ struct ContentView: View {
                 BruteGridBackground()
             }
         }
+    }
+
+    func disclosure(for group: ContentGroup, title: LocalizedStringKey, systemImage: String, content: @escaping () -> some View) -> some View {
+        DisclosureGroup(
+            isExpanded: Binding(
+                get: { currentGroup == group },
+                set: { currentGroup = $0 ? group : nil }
+            ),
+            content: content,
+            label: { Label(title, systemImage: systemImage) }
+        )
+    }
+}
+
+extension ContentView {
+    enum ContentGroup {
+        case components
+        case buttons
+        case toggles
+        case formControls
+        case progressAndLabels
+        case themes
     }
 }
 
