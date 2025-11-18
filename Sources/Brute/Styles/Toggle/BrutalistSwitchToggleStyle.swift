@@ -8,9 +8,14 @@
 import SwiftUI
 
 extension ToggleStyle where Self == BrutalistSwitchToggleStyle {
+    /// A brutalist switch toggle style with sliding circular indicator.
     public static var bruteSwitch: Self { BrutalistSwitchToggleStyle() }
 }
 
+/// A toggle style displaying a capsule-shaped switch with animated sliding circle.
+///
+/// Shows a pill-shaped track that changes color when toggled. A circular knob slides
+/// between leading and trailing positions with smooth animation.
 public struct BrutalistSwitchToggleStyle: ToggleStyle {
 
     @Environment(\.bruteContext) private var context
