@@ -69,7 +69,7 @@ struct ContentView: View {
                         disclosure(
                             for: .progressAndLabels,
                             title: "Progress & Labels",
-                            systemImage: "char.bar",
+                            systemImage: "chart.bar",
                             content: { ProgressAndLabelsDemo() }
                         )
 
