@@ -15,10 +15,6 @@ let package = Package(
             name: "Brute",
             targets: ["Brute"]
         ),
-        .library(
-            name: "BruteSamples",
-            targets: ["BruteSamples"]
-        )
     ],
     dependencies: [
         .package(url: "https://github.com/tevelee/SwiftUI-Flow.git", from: "3.0.0")
@@ -32,9 +28,5 @@ let package = Package(
                 .product(name: "Flow", package: "swiftui-flow")
             ]
         ),
-        .target(
-            name: "BruteSamples",
-            dependencies: ["Brute"]
-        )
     ]
 )

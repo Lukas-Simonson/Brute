@@ -84,9 +84,7 @@ public struct BruteStyle<Content: View>: View {
             context.color.background
                 .ignoresSafeArea()
 
-            BruteGridShape(density: 8)
-                .stroke(context.color.foreground.opacity(0.15), lineWidth: 1)
-                .ignoresSafeArea()
+            BruteGridBackground()
 
             content()
         }
