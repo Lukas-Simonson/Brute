@@ -13,13 +13,6 @@ import SwiftUI
 /// borders, and shadows based on the current theme. Content placed inside a card is automatically elevated
 /// to the next theme level, creating visual hierarchy.
 ///
-/// ## Features
-///
-/// - Automatic theme-aware styling (colors, dimensions, borders, shadows)
-/// - Content is automatically leveled up by 1 for nested hierarchy
-/// - Responsive to theme changes
-/// - Supports both light and dark color schemes
-///
 /// ## Usage
 ///
 /// Basic card with text content:
