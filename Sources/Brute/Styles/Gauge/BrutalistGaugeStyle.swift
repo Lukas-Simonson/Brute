@@ -8,9 +8,14 @@
 import SwiftUI
 
 extension GaugeStyle where Self == BrutalistGaugeStyle {
+    /// A brutalist gauge style with filled progress indicator.
     public static var brute: Self { BrutalistGaugeStyle() }
 }
 
+/// A gauge style displaying progress with a filled bar and optional value labels.
+///
+/// Shows a horizontal progress bar with accent-colored fill. Supports both simple
+/// and detailed layouts with min/max labels and current value display.
 public struct BrutalistGaugeStyle: GaugeStyle {
 
     @Environment(\.bruteContext) private var context

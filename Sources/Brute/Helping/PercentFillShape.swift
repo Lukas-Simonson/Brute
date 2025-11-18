@@ -7,16 +7,69 @@
 
 import SwiftUI
 
+/// A shape that fills a rectangle based on a percentage value with customizable alignment and corner radius.
+///
+/// `PercentFillShape` creates a filled portion of a rectangle that represents a percentage of completion
+/// or progress. The fill can originate from the leading edge, trailing edge, or center, and supports
+/// rounded corners for smooth visual presentation.
+///
+/// This shape is commonly used for progress bars, gauges, and visual indicators of completion status.
+///
+/// ## Features
+///
+/// - Percentage-based width (0.0 to 1.0)
+/// - Automatic clamping of invalid percentage values
+/// - Multiple alignment options (leading, trailing, center)
+/// - Customizable corner radius
+/// - Adaptive corner radius to prevent visual artifacts
+///
+/// ## Usage
+///
+/// Leading-aligned progress bar:
+///
+/// ```swift
+/// PercentFillShape(percent: 0.75, alignment: .leading, cornerRadius: 8)
+///     .fill(Color.blue)
+///     .frame(height: 40)
+/// ```
+///
+/// Center-aligned fill indicator:
+///
+/// ```swift
+/// PercentFillShape(percent: 0.5, alignment: .center, cornerRadius: 12)
+///     .fill(Color.green)
+///     .frame(height: 30)
+/// ```
+///
+/// Trailing-aligned progress:
+///
+/// ```swift
+/// PercentFillShape(percent: 0.6, alignment: .trailing, cornerRadius: 0)
+///     .fill(Color.orange)
+///     .frame(height: 25)
+/// ```
 struct PercentFillShape: Shape {
 
-    // Some Value between Zero & One
+    /// The fill percentage, clamped between 0.0 (empty) and 1.0 (full).
     var percent: Double
 
-    // Where the progress should start from. Leading & ListRowLeading / Trailing & ListRowTrailing can be treated the same.
+    /// The horizontal alignment determining where the fill originates.
+    ///
+    /// - `.leading` or `.listRowSeparatorLeading`: Fill from the left edge
+    /// - `.trailing` or `.listRowSeparatorTrailing`: Fill from the right edge
+    /// - `.center`: Fill from the center, expanding outward
     var alignment: HorizontalAlignment = .leading
 
+    /// The corner radius for the filled portion.
+    ///
+    /// The actual corner radius used will be automatically adjusted if it exceeds
+    /// half the height or width of the filled area to prevent visual artifacts.
     var cornerRadius: CGFloat
 
+    /// Creates the path for the filled portion of the shape.
+    ///
+    /// - Parameter rect: The rectangle in which to draw the shape.
+    /// - Returns: A path representing the filled portion based on the percentage and alignment.
     func path(in rect: CGRect) -> Path {
         // Clamp percent between 0 and 1
         let clampedPercent = min(max(percent, 0), 1)

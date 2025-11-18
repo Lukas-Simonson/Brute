@@ -8,9 +8,14 @@
 import SwiftUI
 
 extension ButtonStyle where Self == BrutalistButtonStyle {
+    /// The default brutalist button style with accent colors and press animation.
     public static var brute: Self { BrutalistButtonStyle() }
 }
 
+/// A button style featuring accent colors with an offset shadow that animates on press.
+///
+/// This is the primary button style in the Brute design system. When pressed, the button
+/// moves down toward its shadow, creating a tactile press effect.
 public struct BrutalistButtonStyle: ButtonStyle {
 
     @Environment(\.bruteContext) private var context
@@ -24,7 +29,6 @@ public struct BrutalistButtonStyle: ButtonStyle {
             .bruteStroked()
             .offset(configuration.isPressed ? context.dimen.shadowOffset : .zero)
             .bruteShadow()
-            .animation(.easeIn(duration: 0.05), value: configuration.isPressed)
     }
 }
 

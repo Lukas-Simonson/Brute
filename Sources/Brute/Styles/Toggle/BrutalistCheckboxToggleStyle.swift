@@ -8,9 +8,14 @@
 import SwiftUI
 
 extension ToggleStyle where Self == BrutalistCheckboxToggleStyle {
+    /// A brutalist checkbox toggle style with square indicator and checkmark.
     public static var bruteCheckbox: Self { BrutalistCheckboxToggleStyle() }
 }
 
+/// A toggle style displaying a square checkbox with checkmark when selected.
+///
+/// Shows a square box that fills with accent color and displays a checkmark icon
+/// when the toggle is on. Uses neutral colors when off.
 public struct BrutalistCheckboxToggleStyle: ToggleStyle {
 
     @Environment(\.bruteContext) private var context
