@@ -8,9 +8,14 @@
 import SwiftUI
 
 extension DisclosureGroupStyle where Self == BrutalistDisclosureGroupStyle {
+    /// A brutalist disclosure group style with expandable/collapsible sections.
     public static var brute: Self { BrutalistDisclosureGroupStyle() }
 }
 
+/// A disclosure group style with accent-colored header and animated expand/collapse.
+///
+/// Features a tappable header with chevron indicator, border divider, and smooth
+/// transitions. Content is automatically theme-leveled for nested hierarchy.
 public struct BrutalistDisclosureGroupStyle: DisclosureGroupStyle {
 
     @Environment(\.bruteContext) private var context
