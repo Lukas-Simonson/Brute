@@ -93,8 +93,7 @@ public struct BruteNotice<Title: View, Content: View>: View {
         .foregroundStyle(context.color.accentForeground)
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(context.dimen.paddingMedium)
-        .background(fill ?? context.color.accentBackground)
-        .brutalized()
+        .brutalized(with: fill ?? context.color.accentBackground)
     }
 }
 
