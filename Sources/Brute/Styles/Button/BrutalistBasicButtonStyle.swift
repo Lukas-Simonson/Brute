@@ -8,9 +8,14 @@
 import SwiftUI
 
 extension ButtonStyle where Self == BrutalistBasicButtonStyle {
+    /// A simplified brutalist button style without shadow effects.
     public static var bruteBasic: Self { BrutalistBasicButtonStyle() }
 }
 
+/// A button style with accent colors and opacity-based press feedback.
+///
+/// This style provides a simpler appearance without shadows. When pressed,
+/// the background becomes semi-transparent.
 public struct BrutalistBasicButtonStyle: ButtonStyle {
 
     @Environment(\.bruteContext) private var context

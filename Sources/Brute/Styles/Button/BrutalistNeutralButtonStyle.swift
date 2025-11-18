@@ -8,9 +8,14 @@
 import SwiftUI
 
 extension ButtonStyle where Self == BrutalistNeutralButtonStyle {
+    /// A brutalist button style using neutral colors instead of accent colors.
     public static var bruteNeutral: Self { BrutalistNeutralButtonStyle() }
 }
 
+/// A button style with neutral colors for secondary actions.
+///
+/// Similar to the default brute style but uses neutral foreground and background colors,
+/// making it suitable for secondary or less prominent actions.
 public struct BrutalistNeutralButtonStyle: ButtonStyle {
 
     @Environment(\.bruteContext) private var context
