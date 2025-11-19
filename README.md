@@ -27,7 +27,7 @@ Add Brute to your project using Xcode:
 1. Go to File → Add Package Dependencies
 2. Enter the package URL:
    ```
-   https://github.com/YOUR_USERNAME/Brute
+   https://github.com/Lukas-Simonson/Brute
    ```
 3. Select the version you want to use
 
