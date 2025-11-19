@@ -83,7 +83,7 @@ struct ButtonStylesDemo: View {
             VStack(alignment: .leading, spacing: theme.dimen.paddingSmall) {
                 Text(".bruteReverse")
                     .font(theme.font.header)
-                Text("Shadow movies instead of button")
+                Text("Shadow moves instead of button")
                     .font(theme.font.caption)
                     .foregroundStyle(theme.color.foreground)
 

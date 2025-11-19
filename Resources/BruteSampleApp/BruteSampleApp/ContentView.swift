@@ -118,21 +118,29 @@ enum ThemeOption: String, CaseIterable, Hashable {
     case blue
     case orange
     case green
+    case magenta
+    case maroon
     case multi
 
     var theme: BruteTheme {
         switch self {
-            case .violet: return .violet
-            case .blue: return .blue
-            case .orange: return .orange
-            case .green: return .green
-            case .multi: return .multi
+            case .violet: BruteTheme.violet
+            case .blue: BruteTheme.blue
+            case .orange: BruteTheme.orange
+            case .green: BruteTheme.green
+            case .magenta: BruteTheme.magenta
+            case .maroon: BruteTheme.maroon
+            case .multi: BruteTheme.multi
         }
     }
 }
 
 #Preview {
+    @Previewable @State var theme = ThemeOption.violet
+
     BruteStyle {
-        ContentView(selectedTheme: .constant(.violet))
+        ContentView(selectedTheme: $theme)
     }
+    .bruteTheme(theme.theme)
+    .animation(.default, value: theme)
 }
