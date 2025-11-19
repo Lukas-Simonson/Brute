@@ -1,4 +1,5 @@
-![brute](https://github.com/Lukas-Simonson/Brute/Resources/Images/brute_icon.png)
+
+<img alt="Brute" src="https://raw.githubusercontent.com/Lukas-Simonson/Brute/refs/heads/main/Resources/Images/brute_icon.png" width="256">
 
 A comprehensive Neo-Brutalist design system for SwiftUI, featuring bold borders, offset shadows, and vibrant color themes.
 
@@ -71,7 +72,7 @@ BruteCard {
 }
 ```
 
-![Brute Card Preview](https://github.com/Lukas-Simonson/Brute/Resources/Images/card_example.png)
+<img alt="Brute Card Preview" src="https://raw.githubusercontent.com/Lukas-Simonson/Brute/refs/heads/main/Resources/Images/card_example.png" width="384">
 
 ### BruteNotice
 
@@ -94,7 +95,7 @@ VStack {
 .padding()
 ```
 
-![Brute Notice Preview](https://github.com/Lukas-Simonson/Brute/Resources/Images/notice_example.png)
+<img alt="Brute Notice Preview" src="https://raw.githubusercontent.com/Lukas-Simonson/Brute/refs/heads/main/Resources/Images/notice_example.png" width="384">
 
 ### BrutePicker
 
@@ -114,7 +115,7 @@ var body: some View {
 }
 ```
 
-![Brute Picker Preview](https://github.com/Lukas-Simonson/Brute/Resources/Images/brute_picker_example.png)
+<img alt="Brute Picker Preview" src="https://raw.githubusercontent.com/Lukas-Simonson/Brute/refs/heads/main/Resources/Images/brute_picker_example.png" width="384">
 
 ## Theming
 
@@ -148,7 +149,7 @@ VStack {
 - `.maroon` - Maroon color scheme
 - `.multi` - Multi-color gradient theme
 
-![Color Palette Comparison](https://github.com/Lukas-Simonson/Brute/Resources/Images/color_palette_comparison.png)
+<img alt="Color Palette Comparison" src="https://raw.githubusercontent.com/Lukas-Simonson/Brute/refs/heads/main/Resources/Images/color_palette_comparison.png" width="384">
 
 ### Creating Custom Themes
 
@@ -198,7 +199,7 @@ Button("Reverse") { }
     .buttonStyle(.bruteReverse)
 ```
 
-![Button Style Comparison](https://github.com/Lukas-Simonson/Brute/Resources/Images/button_style_comparison.png)
+<img alt="Button Style Comparison" src="https://raw.githubusercontent.com/Lukas-Simonson/Brute/refs/heads/main/Resources/Images/button_style_comparison.png" width="384">
 
 ### Toggle Styles
 
@@ -212,7 +213,7 @@ Toggle("Enable", isOn: $enabled)
     .toggleStyle(.bruteSwitch)
 ```
 
-![Toggle Style Comparison](https://github.com/Lukas-Simonson/Brute/Resources/Images/toggle_style_comparison.png)
+<img alt="Toggle Style Comparison" src="https://raw.githubusercontent.com/Lukas-Simonson/Brute/refs/heads/main/Resources/Images/toggle_style_comparison.png" width="384">
 
 ### Text Field Style
 
@@ -235,7 +236,7 @@ ProgressView("Loading...")
     .progressViewStyle(.brute)
 ```
 
-![Progress View Style Example](https://github.com/Lukas-Simonson/Brute/Resources/Images/progress_view_style_example.png)
+<img alt="Progress View Style Example" src="https://raw.githubusercontent.com/Lukas-Simonson/Brute/refs/heads/main/Resources/Images/progress_view_style_example.png" width="384">
 
 ### Label Styles
 
@@ -249,7 +250,7 @@ Label("Info", systemImage: "info.circle")
     .labelStyle(.bruteBadgeNeutral)
 ```
 
-![Label Style Comparison](https://github.com/Lukas-Simonson/Brute/Resources/Images/label_style_comparison.png)
+<img alt="Label Style Comparison" src="https://raw.githubusercontent.com/Lukas-Simonson/Brute/refs/heads/main/Resources/Images/label_style_comparison.png" width="384">
 
 ### Other Styles
 
