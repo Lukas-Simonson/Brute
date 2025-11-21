@@ -19,6 +19,7 @@ extension ButtonStyle where Self == BrutalistBasicButtonStyle {
 public struct BrutalistBasicButtonStyle: ButtonStyle {
 
     @Environment(\.bruteContext) private var context
+    @Environment(\.isEnabled) private var isEnabled
 
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -30,6 +31,7 @@ public struct BrutalistBasicButtonStyle: ButtonStyle {
             )
             .bruteClipped()
             .bruteStroked()
+            .saturation(isEnabled ? 1.0 : 0.25)
     }
 }
 
@@ -38,6 +40,10 @@ public struct BrutalistBasicButtonStyle: ButtonStyle {
         VStack(spacing: 30) {
             Button("Violet Button") { /* does nothing */ }
                 .bruteTheme(.violet)
+
+            Button("Disabled Violet Button") { /* does nothing */ }
+                .bruteTheme(.violet)
+                .disabled(true)
 
             Button("Blue Button") { /* does nothing */ }
                 .bruteTheme(.blue)
