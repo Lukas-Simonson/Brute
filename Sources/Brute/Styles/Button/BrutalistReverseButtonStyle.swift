@@ -19,6 +19,7 @@ extension ButtonStyle where Self == BrutalistReverseButtonStyle {
 public struct BrutalistReverseButtonStyle: ButtonStyle {
 
     @Environment(\.bruteContext) private var context
+    @Environment(\.isEnabled) private var isEnabled
 
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -32,6 +33,7 @@ public struct BrutalistReverseButtonStyle: ButtonStyle {
                     .fill(context.color.border)
                     .offset(configuration.isPressed ? context.dimen.shadowOffset : .zero)
             }
+            .saturation(isEnabled ? 1.0 : 0.25)
     }
 }
 
