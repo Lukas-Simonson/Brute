@@ -65,6 +65,14 @@ struct PercentFillShape: Shape {
     /// The actual corner radius used will be automatically adjusted if it exceeds
     /// half the height or width of the filled area to prevent visual artifacts.
     var cornerRadius: CGFloat
+    
+    /// The animatable data for the shape.
+    ///
+    /// This enables smooth animation when the `percent` value changes.
+    var animatableData: Double {
+        get { percent }
+        set { percent = newValue }
+    }
 
     /// Creates the path for the filled portion of the shape.
     ///

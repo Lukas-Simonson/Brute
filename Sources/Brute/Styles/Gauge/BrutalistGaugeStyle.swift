@@ -58,63 +58,72 @@ public struct BrutalistGaugeStyle: GaugeStyle {
 
 #Preview {
 
+    @Previewable @State var value = 0.1
+
     BruteStyle {
-        VStack {
-            Gauge(value: 0.5) {
-                Text("Violet")
-            }
-            .gaugeStyle(.brute)
-            .bruteTheme(.violet)
-            // .bruteTheme(.violet)
-
-            Gauge(
-                value: 0.09,
-                label: {
-                    Text("Blue")
-                },
-                currentValueLabel: {
-                    Text("15%")
-                },
-                minimumValueLabel: {
-                    Text("0%")
-                },
-                maximumValueLabel: {
-                    Text("100%")
+        ScrollView {
+            VStack {
+                Gauge(value: 0.5) {
+                    Text("Violet")
                 }
-            )
-            .gaugeStyle(.brute)
-            .bruteTheme(.blue)
-            // .bruteTheme(.blue)
+                .gaugeStyle(.brute)
+                .bruteTheme(.violet)
+                // .bruteTheme(.violet)
 
-            Gauge(value: 0.5) {
-                Text("Orange")
-            }
-            .gaugeStyle(.brute)
-            .bruteTheme(.orange)
+                Gauge(
+                    value: 0.09,
+                    label: {
+                        Text("Blue")
+                    },
+                    currentValueLabel: {
+                        Text("15%")
+                    },
+                    minimumValueLabel: {
+                        Text("0%")
+                    },
+                    maximumValueLabel: {
+                        Text("100%")
+                    }
+                )
+                .gaugeStyle(.brute)
+                .bruteTheme(.blue)
+                // .bruteTheme(.blue)
 
-            Gauge(
-                value: 0.75,
-                label: {
-                    Text("Green")
-                },
-                currentValueLabel: {
-                    Text("75%")
-                },
-                minimumValueLabel: {
-                    Text("0%")
-                },
-                maximumValueLabel: {
-                    Text("100%")
+                Gauge(value: 0.5) {
+                    Text("Orange")
                 }
-            )
-            .gaugeStyle(.brute)
-            .bruteTheme(.green)
+                .gaugeStyle(.brute)
+                .bruteTheme(.orange)
 
-            Gauge(value: 0.66) {
-                Text("Multi")
+                Gauge(
+                    value: 0.75,
+                    label: {
+                        Text("Green")
+                    },
+                    currentValueLabel: {
+                        Text("75%")
+                    },
+                    minimumValueLabel: {
+                        Text("0%")
+                    },
+                    maximumValueLabel: {
+                        Text("100%")
+                    }
+                )
+                .gaugeStyle(.brute)
+                .bruteTheme(.green)
+
+                Gauge(value: 0.66) {
+                    Text("Multi")
+                }
+                .bruteTheme(.multi)
+
+                Gauge(value: value, label: {})
+                    .animation(.default, value: value)
+
+                Button("Update", action: { value += 0.1 })
             }
-            .bruteTheme(.multi)
+            .padding()
         }
-        .padding()
     }
 }
