@@ -10,6 +10,10 @@ import SwiftUI
 extension ButtonStyle where Self == BrutalistButtonStyle {
     /// The default brutalist button style with accent colors and press animation.
     public static var brute: Self { BrutalistButtonStyle() }
+    
+    public static func brute(fill: Color) -> Self {
+        BrutalistButtonStyle(color: fill)
+    }
 }
 
 /// A button style featuring accent colors with an offset shadow that animates on press.
@@ -20,12 +24,14 @@ public struct BrutalistButtonStyle: ButtonStyle {
 
     @Environment(\.bruteContext) private var context
     @Environment(\.isEnabled) private var isEnabled
+    
+    public var color: Color?
 
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding(context.dimen.paddingMedium)
             .foregroundStyle(context.color.accentForeground)
-            .background(context.color.accentBackground)
+            .background(color ?? context.color.accentBackground)
             .bruteClipped()
             .bruteStroked()
             .offset(configuration.isPressed ? context.dimen.shadowOffset : .zero)
