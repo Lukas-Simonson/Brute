@@ -37,8 +37,7 @@ public struct BruteSection<Title: View, Content: View>: View {
     private var divider: some View {
         Rectangle()
             .fill(context.color.border)
-            .frame(maxWidth: .infinity, maxHeight: context.dimen.borderWidth)
-            .transition(.move(edge: .top))
+            .frame(maxWidth: .infinity, minHeight: context.dimen.borderWidth, maxHeight: context.dimen.borderWidth)
     }
     
     private var contentBody: some View {
